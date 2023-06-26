@@ -14,6 +14,7 @@ class Book():
         ]
         self.chapters()
         self.topics()
+        self.bullet_points()
         #self.add_message()
         #self.openai_request()
         
@@ -28,22 +29,28 @@ class Book():
         #make a request to openai and see how the content looks like
         chapters = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
         #append chapters to self.message
-        self.messages.append({"role": "assistant", "content": chapters})
+        self.messages.append({"role": "assistant", "content": chapters})        
 
         
     def topics(self):
         #add "create topics for each of the chapters" to self.messages
         self.messages.append({"role": "user", "content": "create three topics for each of the chapters"})
         #make new request to openai and see how the content looks like
-        print("messages:")
-        print(self.messages)
         topics = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
-        print(topics)
+        #append topics to self.message
+        self.messages.append({"role": "assistant", "content": topics})
         
     def bullet_points(self):
-        self.messages.append({"role": "user", "content": "create detailed bullet points for each of the bullet points"})
-        
-        
+        self.messages.append({"role": "user", "content": "create detailed bullet points for each of the topics. don't abbreviate anything. provide the bullet points for each topic"})
+        bullet_points = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
+        print(bullet_points)
+        #can repeat as long as their is no chapter ten 
+        self.messages.append({"role": "assistant", "content": bullet_points})
+        #add "continue this chapter" to self.messages
+        self.messages.append({"role": "user", "content": "create detailed bullet points for each of the remaining chapters"})
+        continuation = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
+        print("continuation:")
+        print(continuation)
     
     def add_message(self):
         #self.messages.append(message)

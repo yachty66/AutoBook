@@ -8,9 +8,11 @@
     - write book parameters for intj -
     - write get chapters method where i read the book parameters and make a request - 
     - see / compare the quality of the output with my chatgpt output - 
-    - create topics for each of the chapters (method for that)
-    - compare with chatgpt
-    - create detailed bullet points for each of the topics
+    - create topics for each of the chapters (method for that) - 
+    - compare with chatgpt - 
+    - try if 32k model available for agi house - 
+    - find a way how i can consistantly get all bullet points
+    - create detailed bullet points for each of the topics 
     - compare with chatgpt
     - do i neeed to use create detailed bullet points for each of the remaining chapters ???
     - next steps
@@ -89,6 +91,7 @@ ENTP
     - 
 
 - [ ] outreach
+    - generate a beef bezos book where a guy called beff bezos is selling beef and is becoming billionaire with that
     - reddit 
     - goodreads
     - youtube video on ai hacker
