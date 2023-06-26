@@ -11,11 +11,7 @@
     - create topics for each of the chapters (method for that) - 
     - compare with chatgpt - 
     - try if 32k model available for agi house - 
-    - find a way how i can consistantly get all bullet points
-    - create detailed bullet points for each of the topics 
-    - compare with chatgpt
-    - do i neeed to use create detailed bullet points for each of the remaining chapters ???
-    - next steps
+    - create method which is generating the content
 - [ ] create book title
 - [ ] create book cover
 - [ ] ask chatgpt what else is missing for a book (like author and chapter part)
