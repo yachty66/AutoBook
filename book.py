@@ -18,7 +18,7 @@ class Book():
         self.bullet_points()
         #todo skip for now because consistency was always given
         #self.inconsistencies()
-        
+
         #self.add_message()
         #self.openai_request()
         
@@ -33,7 +33,9 @@ class Book():
         #make a request to openai and see how the content looks like
         chapters = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
         #append chapters to self.message
-        self.messages.append({"role": "assistant", "content": chapters})        
+        self.messages.append({"role": "assistant", "content": chapters})
+        print("Chapters:")
+        print(chapters)
 
         
     def topics(self):
@@ -43,6 +45,8 @@ class Book():
         topics = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
         #append topics to self.message
         self.messages.append({"role": "assistant", "content": topics})
+        print("Topics:")
+        print(topics)
         
     def bullet_points(self):
         self.messages.append({"role": "user", "content": "create detailed bullet points for each of the topics. don't abbreviate anything. provide the bullet points for each topic"})
@@ -56,6 +60,10 @@ class Book():
         #add bullet_points and continuation to outline
         self.outline += bullet_points
         self.outline += continuation
+        print("Bullet Points:")
+        print(bullet_points)
+        print("Continuation:")
+        print(continuation)
         
     def inconsistencies(self):
         self.messages.append({"role": "user", "content": f"are you seeing any inconsistencies with the outline of the following book?:\n\n{self.outline}"})
@@ -79,7 +87,7 @@ class Book():
         #iter over it and add generated content in a file where i save my book content
         pass
         
-    def add_message(self):
+    '''def add_message(self):
         #self.messages.append(message)
         with open("intj.md", "r", encoding="utf-8") as file:
             content = file.read()    
@@ -103,7 +111,7 @@ class Book():
     
     def generate_chapter(self):
         #generate chapter with the name of the chapter if it does not exist
-        pass
+        pass'''
 
         
 init = Book()

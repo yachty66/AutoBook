@@ -12,8 +12,9 @@
     - compare with chatgpt - 
     - try if 32k model available for agi house - 
     - create method which is generating the content - 
-    - create a chatgpt function which is creating chapters which can be parsed (always same format)
-    - start by inspecting the first method and checking if the format is structured
+    - add logs to script
+    - run every request with 0.0 temp
+    - next steps on how to make sure to get always the same format
 - [ ] create book title
 - [ ] create book cover
 - [ ] ask chatgpt what else is missing for a book (like author and chapter part)
