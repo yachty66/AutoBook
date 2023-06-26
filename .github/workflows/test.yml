@@ -1,8 +1,10 @@
 name: Build
 
 on:
+
   push:
     branches: main # Change this if you are using a different branch
+  workflow_dispatch:  
 
 jobs:
   build:
