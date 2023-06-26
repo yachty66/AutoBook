@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Hello World
-        run: echo Hello, world! && exit 1
+        run: echo Hello
 
       - name: Send mail
         if: always()
