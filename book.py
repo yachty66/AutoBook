@@ -13,6 +13,7 @@ class Book():
             }
         ]
         self.chapters()
+        self.topics()
         #self.add_message()
         #self.openai_request()
         
@@ -25,12 +26,24 @@ class Book():
         #add to self.messages
         self.messages.append({"role": "user", "content": content})    
         #make a request to openai and see how the content looks like
-        openai_request = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
-        print(openai_request)
+        chapters = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
+        #append chapters to self.message
+        self.messages.append({"role": "assistant", "content": chapters})
+
         
     def topics(self):
+        #add "create topics for each of the chapters" to self.messages
+        self.messages.append({"role": "user", "content": "create three topics for each of the chapters"})
+        #make new request to openai and see how the content looks like
+        print("messages:")
+        print(self.messages)
+        topics = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
+        print(topics)
         
-        pass
+    def bullet_points(self):
+        self.messages.append({"role": "user", "content": "create detailed bullet points for each of the bullet points"})
+        
+        
     
     def add_message(self):
         #self.messages.append(message)
