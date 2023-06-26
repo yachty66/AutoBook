@@ -6,9 +6,14 @@
 - [x] check what else is wrong / missing
 - [ ] write automation script which is automating this
     - write book parameters for intj -
-    - write get chapters method where i read the book parameters and make a request 
-    - see / compare the quality of the output with my chatgpt output
-    - next steps for the automation
+    - write get chapters method where i read the book parameters and make a request - 
+    - see / compare the quality of the output with my chatgpt output - 
+    - create topics for each of the chapters (method for that)
+    - compare with chatgpt
+    - create detailed bullet points for each of the topics
+    - compare with chatgpt
+    - do i neeed to use create detailed bullet points for each of the remaining chapters ???
+    - next steps
 - [ ] create book title
 - [ ] create book cover
 - [ ] ask chatgpt what else is missing for a book (like author and chapter part)
