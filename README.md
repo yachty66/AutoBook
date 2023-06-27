@@ -158,8 +158,9 @@ Chapter 1: The Unconventional Alchemist
     - make ten runs and save the result of each of the ten runs to see how all the possible outcomes look like - 
     - save all chapters in a dictionary --> create method dictionary -
     - save all topics in the dictionary - 
-    - find a way how i can connect the dict with the chapters with that one which contains the topics so that i know which topic contain to which chapter
-    - save all bullet points in the dictionary
+    - find a way how i can connect the dict with the chapters with that one which contains the topics so that i know which topic contain to which chapter - 
+    - write a dict exactly how i want to have it and than realize it with code gen
+    - save all bullet points in the dictionary. and how? like {chapter_number:number_topic?:bullet_points} ... the thing is just later i need to find the bullet points again. because i iter over chapter, topics ... usually there should be as many bullets than topics. i.e. i can just take chapter number again. put the bullet points for one topic into a list 
     - next steps 
     
 - [ ] create book title

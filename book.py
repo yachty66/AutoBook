@@ -19,6 +19,7 @@ class Book():
         self.topics()
         self.bullet_points()
         self.parse_chapters()
+        self.parse_topics()
         #todo skip for now because consistency was always given
         #self.inconsistencies()
         #self.add_message()
@@ -79,9 +80,6 @@ class Book():
         print ("topics:")
         print(cleaned_topics)
         
-
-        
-    
     def parse_bullet_points(self):
         pass
         
