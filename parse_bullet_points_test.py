@@ -626,31 +626,28 @@ Chapter 10: The New Frontier
 """
 
 
-#{1:["bullet_one", "bullet_two", ...], 2:["bullet_one", "bullet_two", ...], ..., 10:["bullet_one", "bullet_two", ...]}
-
-#make a liste like: "{1:["bullet_one", "bullet_two", ...], 2:["bullet_one", "bullet_two", ...], ..., 10:["bullet_one", "bullet_two", ...]}" given the different formats of outlines
-import re
-import json
+#make a liste like: "{"Chapter 1: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], "Chapter 2: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], ..., "Chapter 10: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]]}" given the different formats of outlines. the number stands for the current chapter and the list is a list of lists of bullets. it can also be the case that there are more than three bullets per topic. i need a method which takes as input an outline and returns the parsed content
 import re
 
-# Function to extract bullets from a given outline
-def extract_bullets(outline):
-    bullets = re.findall(r'- (.*?)(?=\n)', outline)
-    return bullets
-
-# Function to parse an outline into a JSON object
 def parse_outline(outline):
-    # Extract bullets from the outline
-    bullets = extract_bullets(outline)
-    # Create a dictionary where each key is the chapter number and the value is a list of bullets from that chapter
-    chapters_bullets = {}
-    chapter_number = 1
-    for i in range(0, len(bullets), 3):
-        chapters_bullets[chapter_number] = bullets[i:i+3]
-        chapter_number += 1
-    # Convert the dictionary to a JSON object
-    json_object = json.dumps(chapters_bullets, indent=4)
-    return json_object
+    parsed_content = {}
+    chapters = re.split(r'\n(?=\*\*Chapter \d+:)', outline)
+    counter = 1
+    for chapter in chapters:
+        if chapter.strip() == '':
+            continue
+        topics = re.split(r'\n(?=\d+\.)', chapter)
+        bullets = []
+        for topic in topics[1:]:
+            bullet_points = re.findall(r'- (.*?)\n', topic)
+            bullets.append(bullet_points)
+        parsed_content[counter] = bullets
+        counter += 1
+    print(parsed_content)
+    return parsed_content
 
-# Test the function with the first outline
+# Test the function with the given outlines
 print(parse_outline(outline_one))
+#print(parse_outline(outline_two))
+#print(parse_outline(outline_three))
+#print(parse_outline(outline_four))
