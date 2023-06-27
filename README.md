@@ -156,8 +156,9 @@ Chapter 1: The Unconventional Alchemist
     - add logs to script - 
     - run every request with 0.0 temp - 
     - make ten runs and save the result of each of the ten runs to see how all the possible outcomes look like - 
-    - save all chapters in a dictionary --> create method dictionary
-    - save all topics in the dictionary 
+    - save all chapters in a dictionary --> create method dictionary -
+    - save all topics in the dictionary - 
+    - find a way how i can connect the dict with the chapters with that one which contains the topics so that i know which topic contain to which chapter
     - save all bullet points in the dictionary
     - next steps 
     

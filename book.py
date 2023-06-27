@@ -66,8 +66,21 @@ class Book():
         print(chapters_json)
         
     def parse_topics(self):
+        # Add the topics and the number of the chapter where the topic is mentioned
+        topics = re.findall(r'(?<=Chapter )(\d+)|- Topic \d+: (.+)|^\d\. (.+):|^- (.+):|^\d\. (.+)$', self.outline, re.MULTILINE)
+        cleaned_topics = {}
+        current_chapter = 0
+        for topic in topics:
+            if topic[0]:
+                current_chapter = int(topic[0])
+            else:
+                topic_text = topic[1] if topic[1] else (topic[2] if topic[2] else (topic[3] if topic[3] else topic[4]))
+                cleaned_topics[f"{topic_text}"] = current_chapter
+        print ("topics:")
+        print(cleaned_topics)
         
-        pass
+
+        
     
     def parse_bullet_points(self):
         pass

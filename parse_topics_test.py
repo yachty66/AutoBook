@@ -313,155 +313,374 @@ Chapter 10: "The Defining Decision"
 """
 
 outline_three = """
-Chapter 1: "The Reluctant Genius"
+**Chapter 1: The Genesis of a Genius**
 
-- Topic 1: Liam's INTJ personality and its influence on his life and career.
-    - Detail Liam's inherent traits: highly intelligent, analytical, driven, and reserved.
-    - Discuss how these traits influence his career choice and passion for cognitive enhancement.
-    - Highlight how his introverted nature affects his social interactions and relationships.
-- Topic 2: Liam's journey from the Netherlands to Berlin.
-    - Describe Liam's upbringing and education in the Netherlands.
-    - Discuss his decision to move to Berlin and his reasons.
-    - Highlight how the cultural shift impacts his personal and professional life.
-- Topic 3: How his interest in cognitive enhancement originated and developed.
-    - Explore Liam's early interest in neuroscience, biochemistry, and artificial intelligence.
-    - Discuss significant instances or influences that led to his fascination with cognitive enhancement.
-    - Highlight his dedication to this field, leading to the creation of his home laboratory.
+1. Liam's Early Life and Background:
+    - Born and raised in the Netherlands, Liam's fascination with cognitive enhancement began early. 
+    - Excelling in academics, especially in computer science and biochemistry. 
+    - Early interest in artificial intelligence and neuroscience, driven by a quest to understand human cognition.
 
-Chapter 2: "The Home Laboratory"
+2. The Move to Berlin:
+    - Decision to relocate to Berlin due to its thriving tech scene.
+    - Difficulties and excitement related to adjusting to a new environment and culture. 
+    - Impact of the move on Liam's career, opening new opportunities and challenges.
 
-- Topic 1: The transformation of a room into a lab.
-    - Detail the process of transforming a regular room into a functioning lab.
-    - Describe the equipment and resources Liam uses for his experiments.
-    - Highlight any challenges faced during this transition.
-- Topic 2: The resources and tools Liam uses for his experiments.
-    - Discuss the various tools, software, and equipment Liam uses in his lab.
-    - Highlight how he acquires or builds them, emphasizing his resourcefulness.
-    - Describe how he uses these resources to develop his cognitive enhancement algorithm.
-- Topic 3: The role of Berlin's tech scene in supporting Liam's work.
-    - Detail the thriving Berlin tech scene and its influence on Liam's work.
-    - Discuss how this environment fosters innovation and provides resources for Liam's experiments.
-    - Highlight any significant interactions or collaborations with other tech enthusiasts in Berlin.
+3. Initiating the Project:
+    - Setting up a makeshift lab in his apartment to research cognitive enhancement.
+    - The initial steps of the project, including defining the scope and objectives.
+    - Encountering first challenges such as resource limitations and isolation.
 
-Chapter 3: "The Brain Enhancing Algorithm"
+**Chapter 2: Brainchild**
 
-- Topic 1: The scientific principles behind Liam's cognitive enhancement algorithm.
-    - Discuss the neuroscience and biochemistry principles that underpin Liam's work.
-    - Highlight how these principles are translated into a practical, working algorithm.
-    - Describe the potential impact and implications of this algorithm in the field of artificial intelligence.
-- Topic 2: The process of synthesizing Modafinil and LSD derivatives.
-    - Detail the scientific and experimental process of synthesizing these substances.
-    - Discuss any challenges or breakthroughs during this process.
-    - Highlight the safety measures Liam implements during his experiments.
-- Topic 3: The potential implications of his work in the field of artificial intelligence.
-    - Discuss potential benefits and advancements in AI due to Liam's algorithm.
-    - Highlight any risks or ethical implications.
-    - Discuss the potential for AI-powered cognitive enhancement and its societal implications.
+1. The Birth of the Algorithm:
+    - The process of developing the cognitive enhancement algorithm, marked by hours of coding and data analysis.
+    - Breakthroughs that propel the project forward, driven by Liam's genius and perseverance.
+    - Setbacks that test Liam's resolve, including technical issues and doubts about the project's feasibility.
 
-Chapter 4: "First Taste of Transcendence"
+2. The First Tests:
+    - Initial experiments with the algorithm, involving rigorous testing methodologies.
+    - Observations from these tests that show promise, fuelling Liam's determination.
+    - Exceptional results that signify the algorithm’s potential to revolutionize cognitive enhancement.
 
-- Topic 1: Liam's first personal experience with the cognitive improvement substances.
-    - Detail Liam's decision to personally test his substances and his experiences.
-    - Discuss the immediate and long-term cognitive enhancements he notices.
-    - Highlight any unexpected side effects or outcomes from this experiment.
-- Topic 2: The immediate and long-term effects of cognitive enhancement.
-    - Discuss the cognitive, emotional, and physical changes Liam experiences.
-    - Highlight the potential long-term effects based on Liam's observations and scientific knowledge.
-    - Discuss any potential risks or downsides of cognitive enhancement.
-- Topic 3: The potential global impact of cognitive enhancement.
-    - Discuss the potential societal benefits of widespread cognitive enhancement.
-    - Highlight possible ethical and equality concerns.
-    - Explore the potential consequences of cognitive enhancement on various sectors like education, employment, etc.
+3. Intellectual Triumph:
+    - Celebrating the success of the algorithm, filled with a sense of accomplishment and euphoria.
+    - Boost in Liam's confidence, coupled with an anticipation of the potential benefits the algorithm can bring.
+    - Foreshadowing of potential issues, hinting at the complex ethical and societal implications of his work.
 
-Chapter 5: "The Unexpected Spotlight"
+**Chapter 3: The First Spark**
 
-- Topic 1: The scientific community's reaction to Liam's work.
-    - Detail the reactions of various stakeholders in the scientific community.
-    - Highlight any offers of collaboration, funding, or recognition Liam receives.
-    - Discuss any criticism or skepticism Liam faces and his response.
-- Topic 2: The attention from unscrupulous individuals and their intentions.
-    - Detail the type of attention Liam receives from less ethical individuals or entities.
-    - Discuss the possible motives of these individuals.
-    - Highlight any actions they take to exploit or sabotage Liam's work.
-- Topic 3: The emerging ethical and legal issues related to cognitive enhancement.
-    - Discuss the potential ethical concerns over the use and distribution of cognitive enhancement substances.
-    - Highlight the legal grey areas and potential regulatory challenges Liam may face.
-    - Discuss the societal debate over cognitive enhancement and its regulation.
+1. Self-Experimentation:
+    - Liam's bold decision to test the substances on himself, driven by curiosity and confidence in his work.
+    - Administration of the substances, marked by careful dosing and monitoring.
+    - Immediate effects of the substances, resulting in enhanced cognition and a sense of invincibility.
 
-Chapter 6: "The Billionaire’s Burden"
+2. Enhanced Cognition:
+    - Significant improvements in Liam's cognitive abilities, particularly in memory, focus, and creativity.
+    - Initial benefits of enhanced cognition, including increased productivity and intellectual prowess.
+    - The excitement that accompanies these improvements, hinting at the profound potential of his work.
 
-- Topic 1: Liam's sudden rise to wealth and fame.
-    - Detail the sudden influx of wealth and recognition Liam receives.
-    - Discuss the changes in his lifestyle and relationships due to his newfound status.
-    - Highlight any challenges of managing wealth and fame.
-- Topic 2: The challenges and temptations associated with his new status.
-    - Discuss the temptations that come with wealth and how Liam navigates them.
-    - Highlight the challenges of maintaining his values and integrity in the face of wealth and power.
-    - Discuss the impact on his work and his ability to focus on his passion.
-- Topic 3: The impact of his success on personal relationships and lifestyle.
-    - Detail how his relationships change in the wake of his success.
-    - Discuss the changes in his daily routine and lifestyle.
-    - Highlight any personal struggles or dilemmas he faces due to these changes.
+3. Warning Signs:
+    - First hints of potential pitfalls, including dependency and overconfidence.
+    - Physical and mental side effects of the substances that suggest potential risks.
+    - Emerging ethical questions around the use of such cognitive-enhancing substances.
 
-Chapter 7: "The Ethical Quandary"
+**Chapter 4: Echoes in the Tech World**
 
-- Topic 1: Liam's personal struggle with the moral implications of his work.
-    - Detail Liam's introspection and dilemmas regarding the ethical implications of his work.
-    - Discuss his perspective on the right to cognitive enhancement and its potential misuse.
-    - Highlight the steps he takes to address these ethical concerns.
-- Topic 2: The dilemma of distributing substances aimed at cognitive enhancement.
-    - Discuss the potential benefits and risks of widespread distribution of cognitive enhancement substances.
-    - Highlight the ethical considerations of who gets access and why.
-    - Discuss the potential societal impact of such distribution.
-- Topic 3: The societal impact and ethical considerations of cognitive enhancement.
-    - Discuss the potential societal changes resulting from widespread cognitive enhancement.
-    - Highlight ethical debates around cognitive enhancement in society.
-    - Discuss the role of regulation and policy in managing these impacts.
+1. Spreading the News:
+    - How word of Liam's work spreads through scientific journals, tech blogs, and social media.
+    - Initial public reaction, ranging from awe and admiration to skepticism and concern.
+    - The scientific community's response, marked by curiosity, intrigue, and calls for further investigation.
 
-Chapter 8: "The Betrayal"
+2. Rising Fame:
+    - Liam's sudden prominence in the tech world, with invitations to conferences and interviews with tech magazines.
+    - Admiration from peers and younger generations, looking up to him as a pioneer in cognitive enhancement.
+    - Skepticism from some quarters, raising questions about the validity and ethics of his work.
 
-- Topic 1: The introduction of corporate espionage into Liam's journey.
-    - Detail the occurrence of corporate espionage in the cognitive enhancement sector.
-    - Discuss the motives behind such actions and their impact on Liam's work.
-    - Highlight how Liam discovers and addresses this espionage.
-- Topic 2: The identity and motives of the betrayer.
-    - Detail the identity and background of the betrayer.
-    - Discuss their motives and connection to Liam's work.
-    - Highlight the aftermath of the betrayal on their relationship with Liam.
-- Topic 3: The impact of the betrayal on Liam's work and trust in others.
-    - Discuss the immediate and long-term impact of the betrayal on Liam's work and security.
-    - Highlight how it affects his trust in others and his future collaborations.
-    - Discuss the measures Liam takes to prevent such incidents in the future.
+3. First Scrutinies:
+    - Closer examination of his work by regulatory bodies, ethicists, and competitors.
+    - Questions raised about the safety, ethics, and potential misuse of his cognitive enhancement algorithm and substances.
+    - Impact on Liam, including increased stress and the realization of the challenges that lie ahead.
 
-Chapter 9: "The Fight for Control"
+**Chapter 5: The Billionaire's Burden**
 
-- Topic 1: Liam's battle against corporate entities trying to exploit his work.
-    - Detail the strategies and tactics used by corporate entities to gain control over Liam's work.
-    - Discuss Liam's response and his fight to retain control.
-    - Highlight any alliances or collaborations he forms to strengthen his position.
-- Topic 2: The role of regulatory authorities in this struggle.
-    - Discuss the stance of regulatory authorities on cognitive enhancement and Liam's work.
-    - Highlight any legal challenges Liam faces from these authorities.
-    - Discuss the broader implications of these regulations for the cognitive enhancement sector.
-- Topic 3: Liam's strategic moves to maintain control.
-    - Detail the strategic decisions Liam makes to protect his work and control.
-    - Discuss the impact of these decisions on his work and the cognitive enhancement sector.
-    - Highlight any potential risks or consequences of these strategic moves.
+1. Instant Wealth:
+    - Liam's journey to becoming a billionaire, driven by the commercialization of his algorithm.
+    - Lifestyle changes brought about by wealth, including buying a luxurious penthouse, hiring staff, and indulging in expensive hobbies.
+    - The allure of luxury, contrasted by the emptiness and loneliness that often accompany sudden wealth.
 
-Chapter 10: "The Defining Decision"
+2. Challenges of Wealth:
+    - Unexpected stresses that come with sudden wealth, such as increased scrutiny, isolation, and fear of losing wealth.
+    - Public scrutiny of his lifestyle, leading to invasions of privacy and judgment from the public and media.
+    - Personal struggles, including dealing with newfound fame, managing his wealth, and maintaining relationships.
 
-- Topic 1: The crucial decisions Liam needs to make about his future and the future of cognitive enhancement.
-    - Discuss the decision-making process Liam undergoes regarding his work and its future.
-    - Highlight the factors he considers and the potential outcomes of his decisions.
-    - Detail the decisions he finally takes and their immediate impact.
-- Topic 2: The potential implications of these decisions for society.
-    - Discuss the potential societal changes that could result from Liam's decisions.
-    - Highlight any ethical or equality concerns that arise from these implications.
-    - Discuss the public reaction to these implications and decisions.
-- Topic 3: A reflection on Liam's journey and a hint at what's to come in a potential sequel.
-    - Reflect on Liam's journey from a computer scientist to a billionaire and his evolution as a character.
-    - Highlight the lessons learned and growth experienced.
-    - Tease potential plotlines or conflicts that could be explored in a sequel.
+3. Coping Mechanisms:
+    - How Liam deals with his new status, including seeking advice from mentors, hiring a public relations team, and isolating himself from the public.
+    - Changes in his behavior, such as becoming more guarded and less trusting.
+    - Impact on his relationships, leading to strained friendships and difficulties in forming genuine connections.
+
+**Chapter 6: The Wolf at the Door**
+
+1. The Dark Side of Success:
+    - Introduction to individuals who want to exploit Liam's work, including corporate spies, unethical entrepreneurs, and black-market dealers.
+    - Their tactics, such as bribery, threats, and infiltration into Liam's company.
+    - Their intentions, primarily driven by greed and a desire to control the lucrative cognitive enhancement market.
+
+2. Corporate Espionage:
+    - The attempts to steal Liam's work, involving sophisticated hacking attempts and inside jobs.
+    - Security breaches that put his work at risk, leading to a race to protect his algorithm.
+    - The fight to protect his work, involving tightening security measures, investigating breaches, and legal battles.
+
+3. Legal Battles:
+    - The beginning of legal challenges, including lawsuits from competitors and investigations by regulatory bodies.
+    - The stress they cause, adding to the burdens of wealth and fame.
+    - The risk to Liam's empire, threatening his wealth, reputation, and the future of his work.
+
+**Chapter 7: The Ethical Quandary**
+
+1. Ethical Dilemmas:
+    - Liam's struggle with the moral implications of his work, wrestling with questions about safety, equity, and potential misuse.
+    - Pressure from different sides, including calls for regulation, demands for access to the substances, and ethical debates.
+    - His indecision, torn between the desire to share his work with the world and the fear of its potential misuse.
+
+2. Public Opinion:
+    - The backlash from the public, fueled by media coverage, debates in the scientific community, and fear of the unknown.
+    - The media coverage, often sensationalized, that paints Liam as a controversial figure.
+    - The impact on Liam's image, leading to a tarnished reputation and increasing isolation.
+
+3. Search for a Solution:
+    - Liam's attempts to address the ethical issues, including proposing regulations, partnering with ethical organizations, and conducting further safety tests.
+    - The proposed solutions, like creating an ethical framework for use, establishing access controls, and pushing for transparency.
+    - The ongoing debate, showing the complexity of the issue and the difficulty in finding a universally accepted solution.
+
+**Chapter 8: The Tumultuous Tide**
+
+1. Aftermath of Success:
+    - The negative effects of Liam's success on his personal and professional life, characterized by stress, loneliness, and fear.
+    - His struggle to cope, showing the downside of fame and wealth.
+    - The impact on his mental health, hinting at issues like anxiety, depression, and burnout.
+
+2. Personal Crises:
+    - Liam's personal troubles, including broken relationships, isolation, and public scrutiny.
+    - The strain on his relationships, leading to loss of friendships and strained family ties.
+    - The toll on his mental health, highlighting the need for support and self-care.
+
+3. Professional Challenges:
+    - The hurdles Liam faces in his career, including legal challenges, ethical dilemmas, and business pressures.
+    - The changes in his work, such as increased scrutiny, higher expectations, and a shift from innovation to management.
+    - The stress of maintaining his empire, showing the challenges of running a billion-dollar enterprise.
+
+**Chapter 9: The Reckoning**
+
+1. Consequences of Decisions:
+    - The aftermath of Liam's choices, including societal impacts, legal outcomes, and personal repercussions.
+    - The impact on society, ranging from advances in cognitive enhancement to ethical debates and regulatory changes.
+    - His own introspection, reflecting on his journey, his decisions, and their consequences.
+
+2. Changed Relationships:
+    - The alteration in Liam's relationships due to his decisions, including fallouts with old friends, new alliances, and strained family ties.
+    - The fallouts, characterized by betrayal, disappointment, and regret.
+    - The new alliances, often based on mutual benefit, power dynamics, and shared interests.
+
+3. Self-Reflection:
+    - Liam's reflection on his journey, looking back at his successes, failures, and the lessons learned.
+    - The lessons learned, including the importance of ethical considerations, the pitfalls of fame, and the value of genuine relationships.
+    - His regrets, showing his humanity and the cost of his decisions.
+
+**Chapter 10: The Road Ahead**
+
+1. Defining Decisions:
+    - Liam's decisions that will shape his future, such as focusing on ethical considerations, dedicating resources to safety tests, and advocating for regulations.
+    - The implication of these choices, potentially leading to a more ethical and safer cognitive enhancement industry.
+    - His resolve, showing his growth as a person and a leader, and his commitment to doing the right thing.
+
+2. Impact on Society:
+    - The long-term effects of cognitive-enhancing substances on society, including potential improvements in productivity, ethical debates, and changes in human cognition.
+    - The benefits, such as advances in neuroscience, potential treatments for cognitive disorders, and improved human capabilities.
+    - The drawbacks, like potential misuse, inequity, and societal resistance.
+
+3. Hopes for the Future:
+    - Liam's vision for the future, envisioning a world where cognitive enhancement is safe, ethical, and accessible.
+    - His hopes for his work, including continued innovation, widespread acceptance, and positive impact on society.
+    - His personal aspirations, showing his desires for personal growth, balanced life, and meaningful relationships.
 """
 
-#parse all chapters from outline in a dict like {chapters: [chapter1, chapter2, chapter3, ...]}
+outline_four = """
+Chapter 1: The Unconventional Alchemist
+- Liam's life in the Netherlands and his personality:
+   - Liam's early interest in computer science and artificial intelligence.
+   - The influence of his INTJ personality on his decision-making and career path.
+   - The role of his Dutch upbringing in his approach to work and life.
+- The decision to move to Berlin and adapt to a new environment:
+   - The reasons behind Liam's move to Berlin, including career opportunities and a bustling tech scene.
+   - His initial struggles and eventual adjustment to Berlin's lifestyle and culture.
+- The birth of the idea for a cognitive enhancement algorithm and setting up the lab:
+   - The inspiration behind Liam's venture into cognitive enhancement.
+   - The process of converting a room in his apartment into a makeshift laboratory.
+   - The anticipation and excitement as he embarks on this new project.
+
+Chapter 2: The Elusive Formula
+- The scientific process of researching cognitive enhancement:
+   - Exhaustive research and study into neuroscience, biochemistry, and artificial intelligence.
+   - The application of his computer science skills in the research process.
+   - The trial and error involved in the early stages of experimentation.
+- The struggles and failures Liam encounters:
+   - The numerous failed attempts and setbacks during the experimentation phase.
+   - The emotional and psychological toll of these failures on Liam.
+   - His resilience and determination to persevere despite the challenges.
+- The importance of perseverance in scientific discovery:
+   - Reflection on the significance of perseverance in the face of failure.
+   - The role of his INTJ personality in maintaining focus and determination.
+   - The breakthrough moment when he finally synthesizes the cognitive enhancement substances.
+
+Chapter 3: The Breakthrough
+- The successful synthesis of Modafinil and LSD derivatives:
+   - The moment of success and the excitement it brings.
+   - The detailed process of creating the cognitive enhancement substances.
+   - His decision to test the substances on himself.
+- Liam's initial reaction and decision to personally test the substances:
+   - The deliberation behind the decision to become his own test subject.
+   - The preparation and precautions taken before the first test.
+   - The initial effects and changes Liam observes in his cognition.
+- The immediate effects and changes Liam experiences:
+   - The remarkable improvement in his cognitive abilities.
+   - The shift in his perception of the world around him.
+   - The potential he sees in his discovery.
+
+Chapter 4: The Awakening
+- The transformation of Liam's cognitive abilities:
+   - The enhancement in his problem-solving skills and analytical thinking.
+   - The boost in his creativity and ability to innovate.
+   - The change in his daily routine to accommodate these new abilities.
+- The changes in his perception of the world:
+   - The heightened awareness and understanding of his surroundings.
+   - The shift in his interpersonal relationships due to increased empathy.
+   - The appreciation for details and nuances he previously overlooked.
+- The impact of cognitive enhancement on Liam's personal and professional life:
+   - The boost in his career as a result of enhanced cognitive abilities.
+   - The changes in his personal relationships due to his transformation.
+   - The ethical questions he grapples with as he realizes the potential of his discovery.
+
+Chapter 5: The Spotlight
+- The recognition and attention from the scientific community:
+   - The intrigue and curiosity of the scientific community towards Liam's discovery.
+   - The invitations to speak at conferences and the increased demand for his expertise.
+   - The scientific debates and discussions sparked by his work.
+- The interest from corporate entities and their intentions:
+   - The offers and proposals from various corporations interested in his work.
+   - The potential for commercialization of his cognitive enhancement substances.
+   - The concerns about potential misuse and exploitation of his discovery.
+- The threats posed by less scrupulous individuals:
+   - The interest from individuals with nefarious intentions.
+   - The attempts at corporate espionage and theft of his work.
+   - The measures he takes to protect his work and himself.
+
+Chapter 6: The Unseen Consequences
+- The ethical implications of Liam's work:
+   - The potential for misuse of cognitive enhancement substances.
+   - The moral responsibility he feels for his discovery.
+   - The debates and dilemmas regarding the distribution and control of these substances.
+- The unintended side effects of the substances:
+   - The discovery of potential health risks associated with prolonged use of the substances.
+   - The emotional and psychological changes he experiences.
+   - The impact of these side effects on his life and work.
+- The dilemma of distribution and control of the substances:
+   - The decisions to be made regarding who gets access to the substances.
+   - The considerations for the potential societal impact of widespread cognitive enhancement.
+   - The responsibility he feels to ensure the ethical use of his discovery.
+
+Chapter 7: The Tempest
+- The legal challenges Liam faces:
+   - The legal scrutiny and potential lawsuits related to his work.
+   - The challenges in navigating the complex legal landscape around cognitive enhancement.
+   - The determination to fight for his work and its potential benefits.
+- The instances of corporate espionage and their effects:
+   - The incidents of theft and corporate espionage targeted at his work.
+   - The impact of these incidents on his personal life and work.
+   - His efforts to protect his work and maintain control over his discovery.
+- The personal struggles and their impact on Liam's life:
+   - The stress and pressure of constant scrutiny and threats.
+   - The impact on his personal relationships and mental health.
+   - The coping mechanisms and support systems he relies on during this challenging time.
+
+Chapter 8: The Crossroads
+- The impending decisions and their potential implications:
+   - The difficult decisions he must make regarding the future of his work.
+   - The potential impact of these decisions on society and the field of cognitive enhancement.
+   - The factors influencing his decision-making, including ethical considerations, personal beliefs, and societal implications.
+- The determination of Liam's future course:
+   - His plans for the future of his work and his role in it.
+   - The decision to become a tech titan and influence the tech industry.
+   - His vision for the future of cognitive enhancement.
+- The potential future of cognitive enhancement:
+   - The possibilities for the field of cognitive enhancement.
+   - The potential benefits and risks associated with widespread cognitive enhancement.
+   - His hopes and fears for the future of his discovery.
+
+Chapter 9: The Fall and Rise
+- The events leading to Liam's downfall:
+   - The culmination of legal challenges, corporate espionage, and personal struggles leading to his downfall.
+   - The impact of his downfall on his personal life, career, and reputation.
+   - The lessons he learns from his failures and the resilience he displays.
+- The challenges faced during this low point:
+   - The struggles during this period, including financial difficulties, loss of reputation, and personal hardships.
+   - The support he receives and the people who stand by him during this time.
+   - The determination to rebuild and come back stronger.
+- The rise of Liam as a tech titan and his newfound image:
+   - His comeback and the establishment of his tech empire.
+   - The changes in his approach to business and his role as a tech titan.
+   - The public and industry's reaction to his return and his new image.
+
+Chapter 10: The New Frontier
+- The global impact of the cognitive enhancement algorithm:
+   - The widespread use and impact of his cognitive enhancement substances.
+   - The changes in society and various industries as a result of cognitive enhancement.
+   - The global recognition and influence he gains as a result of his work.
+- The societal implications of cognitive enhancement:
+   - The debates and discussions about the ethics and implications of cognitive enhancement.
+   - The changes in societal norms and expectations due to cognitive enhancement.
+   - The future of cognitive enhancement and its role in society.
+- Liam's vision for the future of cognitive enhancement and his role in it:
+   - His plans for further research and development in cognitive enhancement.
+   - His vision for a society where cognitive enhancement is used ethically and responsibly.
+   - His commitment to influencing the future of cognitive enhancement and ensuring its ethical use.
+"""
+
+
+
+#1. The tough decisions about the future of the algorithm., - Topic 1: Liam's INTJ personality and its influence on his life and career., 1. Liam's Early Life and Background:, - his life in the Netherlands and his personality:
+
+#parse all topics from the possible formats of outline_one to outline_four. topics should be appended to a dict which looks at the end like {topics: [topic1, topic2, topic3, topic4, topic5, topic6, topic7, topic8, topic9, topic10]}
+import re
+
+outlines = [outline_one, outline_two, outline_three, outline_four]
+def parse_topics(outline):
+    # Add the topics and the number of the chapter where the topic is mentioned
+    topics = re.findall(r'(?<=Chapter )(\d+)|- Topic \d+: (.+)|^\d\. (.+):|^- (.+):|^\d\. (.+)$', outline, re.MULTILINE)
+    cleaned_topics = {}
+    current_chapter = 0
+    for topic in topics:
+        if topic[0]:
+            current_chapter = int(topic[0])
+        else:
+            topic_text = topic[1] if topic[1] else (topic[2] if topic[2] else (topic[3] if topic[3] else topic[4]))
+            cleaned_topics[f"{topic_text}"] = current_chapter
+    print(cleaned_topics)
+    return cleaned_topics
+
+parse_topics(outline_two)
+
+'''for outline in outlines:
+    topics = parse_topics(outline)
+    print(len(topics))
+    print(topics)
+'''
+
+
+
+"""
+import re
+
+outlines = [outline_one, outline_two, outline_three, outline_four]
+def parse_topics(outline):
+    # Add the topics and the number of the chapter where the topic is mentioned
+    topics = re.findall(r'(?<=Chapter )(\d+)|- Topic \d+: (.+)|^\d\. (.+):|^- (.+):|^\d\. (.+)$', outline, re.MULTILINE)
+    cleaned_topics = {}
+    current_chapter = 0
+    for topic in topics:
+        if topic[0]:
+            current_chapter = int(topic[0])
+        else:
+            topic_text = topic[1] if topic[1] else (topic[2] if topic[2] else (topic[3] if topic[3] else topic[4]))
+            cleaned_topics[f"Chapter {current_chapter}: {topic_text}"] = current_chapter
+    print(cleaned_topics)
+    return cleaned_topics
+
+print(parse_topics(outline_one))
+
+'''for outline in outlines:
+    topics = parse_topics(outline)
+    print(len(topics))
+    print(topics)
+'''
+
+"""
