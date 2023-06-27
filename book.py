@@ -18,6 +18,7 @@ class Book():
         self.chapters()
         self.topics()
         self.bullet_points()
+        self.parse_chapters()
         #todo skip for now because consistency was always given
         #self.inconsistencies()
         #self.add_message()
@@ -53,16 +54,19 @@ class Book():
         bullet_points = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.7).choices[0].message["content"]
         self.messages.append({"role": "assistant", "content": bullet_points})
         self.outline += bullet_points
+        print("Bullet Points:")
+        print(bullet_points)
         
     def parse_chapters(self):
         #Chapter 1: "The Reluctant Genius", **Chapter 1: The Whispers of Genius**
-
-        chapter_pattern = r'Chapter \d+: ["\*]*(.*?)["\*]*'
+        chapter_pattern = r'Chapter \d+: "(.*?)"'
         chapters = re.findall(chapter_pattern, self.outline)
-        chapters_json = {"chapters": chapters}
+        chapters_json = {'chapters': chapters}
+        print ("chapters:")
         print(chapters_json)
-    
+        
     def parse_topics(self):
+        
         pass
     
     def parse_bullet_points(self):

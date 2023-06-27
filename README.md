@@ -1,5 +1,8 @@
 # mbti_books
 
+- Topic 1: Liam's INTJ personality and its influence on his life and career.; 1. Childhood and Education:; 1. Liam's background and move to Berlin.; Chapter 1: The Unconventional Alchemist
+
+
 Chapter 1: "The Reluctant Genius", **Chapter 1: The Whispers of Genius**
 
 Chapter 1: "The Reluctant Genius"
