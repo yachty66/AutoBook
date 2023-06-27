@@ -632,9 +632,14 @@ import json
 
 def parse_outline_to_json(outline_text):
     # Regular expressions to identify chapters, topics, and bullet points
-    chapter_pattern = re.compile(r'(?i)(\*\*|)chapter (\d+).*?:\s*["]*(.*?)[\"*]*(\*\*|)$')
+    chapter_patterns = [
+        re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
+        re.compile(r'^Chapter (\d+): "(.*?)"$'),          # Format two
+        re.compile(r'^\*\*Chapter (\d+): (.*?)\*\*$'),    # Format three
+        re.compile(r'^Chapter (\d+): (.*?)$')             # Format four
+    ]
+    topic_pattern = re.compile(r'^\s*-?\s*\d*\.*\s*(.*:)\s*$')
     bullet_pattern = re.compile(r'^\s*-\s+(.+)$')
-    topic_pattern = re.compile(r'^\s*\d*\.*\s*-.*:\s*$')
     
     # Data structure to store the extracted data
     data = {}
@@ -647,14 +652,15 @@ def parse_outline_to_json(outline_text):
     # Process each line in the outline
     for line in lines:
         # Match chapter
-        chapter_match = chapter_pattern.match(line)
-        if chapter_match:
-            _, chapter_number, chapter_title, _ = chapter_match.groups()
-            chapter_key = f"Chapter {chapter_number}: \"{chapter_title}\""
-            data[chapter_key] = []
-            current_chapter = chapter_key
-            is_inside_topic = False
-            continue
+        for chapter_pattern in chapter_patterns:
+            chapter_match = chapter_pattern.match(line)
+            if chapter_match:
+                chapter_number, chapter_title = chapter_match.groups()
+                chapter_key = f"Chapter {chapter_number}: \"{chapter_title}\""
+                data[chapter_key] = []
+                current_chapter = chapter_key
+                is_inside_topic = False
+                break
         
         # Match topics
         topic_match = topic_pattern.match(line)
@@ -670,9 +676,10 @@ def parse_outline_to_json(outline_text):
                 data[current_chapter][-1].append(bullet_match.group(1))
     
     # Convert the nested dictionary into JSON string
-    json_output = json.dumps(data)
+    json_output = json.dumps(data, indent=4)
     print(json_output)
     return json_output
+
 
 parse_outline_to_json(outline_four)
 
