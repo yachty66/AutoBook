@@ -1,6 +1,8 @@
 import openai 
 import requests
 from bs4 import BeautifulSoup
+import re
+import json
 
 openai.api_key = "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"
 
@@ -18,7 +20,6 @@ class Book():
         self.bullet_points()
         #todo skip for now because consistency was always given
         #self.inconsistencies()
-
         #self.add_message()
         #self.openai_request()
         
@@ -31,18 +32,17 @@ class Book():
         #add to self.messages
         self.messages.append({"role": "user", "content": content})    
         #make a request to openai and see how the content looks like
-        chapters = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
+        chapters = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.7).choices[0].message["content"]
         #append chapters to self.message
         self.messages.append({"role": "assistant", "content": chapters})
         print("Chapters:")
         print(chapters)
-
         
     def topics(self):
         #add "create topics for each of the chapters" to self.messages
         self.messages.append({"role": "user", "content": "create three topics for each of the chapters"})
         #make new request to openai and see how the content looks like
-        topics = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
+        topics = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.7).choices[0].message["content"]
         #append topics to self.message
         self.messages.append({"role": "assistant", "content": topics})
         print("Topics:")
@@ -50,30 +50,33 @@ class Book():
         
     def bullet_points(self):
         self.messages.append({"role": "user", "content": "create detailed bullet points for each of the topics. don't abbreviate anything. provide the bullet points for each topic"})
-        bullet_points = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
-        #can repeat as long as their is no chapter ten 
+        bullet_points = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.7).choices[0].message["content"]
         self.messages.append({"role": "assistant", "content": bullet_points})
-        #add "continue this chapter" to self.messages
-        self.messages.append({"role": "user", "content": "create detailed bullet points for each of the remaining chapters"})
-        continuation = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
-        self.messages.append({"role": "assistant", "content": continuation})
-        #add bullet_points and continuation to outline
         self.outline += bullet_points
-        self.outline += continuation
-        print("Bullet Points:")
-        print(bullet_points)
-        print("Continuation:")
-        print(continuation)
+        
+    def parse_chapters(self):
+        #Chapter 1: "The Reluctant Genius", **Chapter 1: The Whispers of Genius**
+
+        chapter_pattern = r'Chapter \d+: ["\*]*(.*?)["\*]*'
+        chapters = re.findall(chapter_pattern, self.outline)
+        chapters_json = {"chapters": chapters}
+        print(chapters_json)
+    
+    def parse_topics(self):
+        pass
+    
+    def parse_bullet_points(self):
+        pass
         
     def inconsistencies(self):
         self.messages.append({"role": "user", "content": f"are you seeing any inconsistencies with the outline of the following book?:\n\n{self.outline}"})
-        inconsistencies = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
+        inconsistencies = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.7).choices[0].message["content"]
         print("inconsistencies:")
         print(inconsistencies)
         self.messages.append({"role": "assistant", "content": inconsistencies})
         #please make corrections to the outline
         self.messages.append({"role": "user", "content": "please make corrections to the chapters, topics and bullet points in the case of inconsistencies and respond with the corrected outline. include every chapter also if its consistent already"})
-        corrections = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages).choices[0].message["content"]
+        corrections = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.7).choices[0].message["content"]
         print("corrections:")
         print(corrections)
         
@@ -100,7 +103,7 @@ class Book():
     def openai_request(self):        
         #there are not so many options left for continuing the story. i think i should input a few baasic parameters and the last content of the book
         for i in range(2):
-            summary = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature=0.8, max_tokens = 6000).choices[0].message["content"]
+            summary = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.7, temperature=0.8, max_tokens = 6000).choices[0].message["content"]
             self.messages.append({"role": "assistant", "content": summary})
             self.messages.append({"role": "user", "content": " continue this chapter"})
         print("messages " + str(self.messages))
@@ -113,9 +116,10 @@ class Book():
         #generate chapter with the name of the chapter if it does not exist
         pass'''
 
-        
 init = Book()
         
-
+#Chapters:
+#Chapter 1: "An Unconventional Mind"
+#- Introduction to Liam, his background, personality, and his life in the Netherlands. His move to Berlin and his fascination with cognitive enhancement.
 
 
