@@ -468,7 +468,7 @@ Chapter 10: "The Defining Decision"
 import re
 
 def parse_chapters(outline):
-    chapter_pattern = r'Chapter \d+: "(.*?)"'
+    chapter_pattern = r"\*\*Chapter \d+: "
     chapters = re.findall(chapter_pattern, outline)
     return {'chapters': chapters}
 

@@ -624,30 +624,56 @@ Chapter 10: The New Frontier
    - His vision for a society where cognitive enhancement is used ethically and responsibly.
    - His commitment to influencing the future of cognitive enhancement and ensuring its ethical use.
 """
+#my current code is parsing outline two wrong because the the topic gets also parsed
 
-
-#make a liste like: "{"Chapter 1: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], "Chapter 2: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], ..., "Chapter 10: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]]}" given the different formats of outlines. the number stands for the current chapter and the list is a list of lists of bullets. it can also be the case that there are more than three bullets per topic. i need a method which takes as input an outline and returns the parsed content
+#make a liste like: "{"Chapter 1: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], "Chapter 2: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], ..., "Chapter 10: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]]}" given the different formats of outlines (outline_one, outline_two, outline_three, outline_four). you need to consider that all of this outlines are different and need different handling. the number stands for the current chapter and the list is a list of lists of bullets. it can also be the case that there are more than three bullets per topic. i need a method which takes as input an outline and returns the parsed content
 import re
+import json
 
-def parse_outline(outline):
-    parsed_content = {}
-    chapters = re.split(r'\n(?=\*\*Chapter \d+:)', outline)
-    counter = 1
-    for chapter in chapters:
-        if chapter.strip() == '':
+def parse_outline_to_json(outline_text):
+    # Regular expressions to identify chapters, topics, and bullet points
+    chapter_pattern = re.compile(r'(?i)(\*\*|)chapter (\d+).*?:\s*["]*(.*?)[\"*]*(\*\*|)$')
+    bullet_pattern = re.compile(r'^\s*-\s+(.+)$')
+    topic_pattern = re.compile(r'^\s*\d*\.*\s*-.*:\s*$')
+    
+    # Data structure to store the extracted data
+    data = {}
+    current_chapter = None
+    is_inside_topic = False
+    
+    # Splitting outline into lines
+    lines = outline_text.split('\n')
+    
+    # Process each line in the outline
+    for line in lines:
+        # Match chapter
+        chapter_match = chapter_pattern.match(line)
+        if chapter_match:
+            _, chapter_number, chapter_title, _ = chapter_match.groups()
+            chapter_key = f"Chapter {chapter_number}: \"{chapter_title}\""
+            data[chapter_key] = []
+            current_chapter = chapter_key
+            is_inside_topic = False
             continue
-        topics = re.split(r'\n(?=\d+\.)', chapter)
-        bullets = []
-        for topic in topics[1:]:
-            bullet_points = re.findall(r'- (.*?)\n', topic)
-            bullets.append(bullet_points)
-        parsed_content[counter] = bullets
-        counter += 1
-    print(parsed_content)
-    return parsed_content
+        
+        # Match topics
+        topic_match = topic_pattern.match(line)
+        if topic_match and current_chapter:
+            data[current_chapter].append([])
+            is_inside_topic = True
+            continue
+        
+        # Match bullet points inside a topic
+        if is_inside_topic and current_chapter:
+            bullet_match = bullet_pattern.match(line)
+            if bullet_match:
+                data[current_chapter][-1].append(bullet_match.group(1))
+    
+    # Convert the nested dictionary into JSON string
+    json_output = json.dumps(data)
+    print(json_output)
+    return json_output
 
-# Test the function with the given outlines
-print(parse_outline(outline_one))
-#print(parse_outline(outline_two))
-#print(parse_outline(outline_three))
-#print(parse_outline(outline_four))
+parse_outline_to_json(outline_four)
+
+#in the case of outline_two the topic for example: ""Topic 1: Liam's INTJ personality and its influence on his life and career." is also added to the list which shouldnt be the case
