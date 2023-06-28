@@ -17,9 +17,10 @@
     - make ten runs and save the result of each of the ten runs to see how all the possible outcomes look like - 
     - save all chapters in a dictionary --> create method dictionary -
     - save all topics in the dictionary - 
-    - integrate bullet point parser and test it in application 
-    - define next steps 
-
+    - integrate bullet point parser and test it in application - 
+    - generate method for initial book generation --> start now with elaborating on [name of chapter] with the topic [name of topic] and his bullet points: [all bullet points of the topic]
+    - create method for continuation of book generation 
+    - next steps
 - [ ] create book title
 - [ ] create book cover
 - [ ] ask chatgpt what else is missing for a book (like author and chapter part)

@@ -120,7 +120,10 @@ class Book():
         print("parsed bullet points:")
         print(l_total)
         
-    def inconsistencies(self):
+    def init_book_generation(self):
+        pass
+        
+    """def inconsistencies(self):
         self.messages.append({"role": "user", "content": f"are you seeing any inconsistencies with the outline of the following book?:\n\n{self.outline}"})
         inconsistencies = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
         print("inconsistencies:")
@@ -130,43 +133,8 @@ class Book():
         self.messages.append({"role": "user", "content": "please make corrections to the chapters, topics and bullet points in the case of inconsistencies and respond with the corrected outline. include every chapter also if its consistent already"})
         corrections = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
         print("corrections:")
-        print(corrections)
+        print(corrections)"""
         
-    def generate_book(self):
-        """
-        7. start now with elaborating on [name of chapter] with the topic [name of topic] and his bullet points:
-
-        [all bullet points of the topic]
-        """
-        #need to have a dictionary which contains chapter, topic and bullet points and sukksessive generated outputs
-        #iter over it and add generated content in a file where i save my book content
-        pass
-        
-    '''def add_message(self):
-        #self.messages.append(message)
-        with open("intj.md", "r", encoding="utf-8") as file:
-            content = file.read()    
-            message = {
-                "role": "user",
-                "content": "Chapter 1: The Dutch Prodigy"
-            }
-            self.messages.append(message)
-        
-    def openai_request(self):        
-        #there are not so many options left for continuing the story. i think i should input a few baasic parameters and the last content of the book
-        for i in range(2):
-            summary = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5, temperature=0.8, max_tokens = 6000).choices[0].message["content"]
-            self.messages.append({"role": "assistant", "content": summary})
-            self.messages.append({"role": "user", "content": " continue this chapter"})
-        print("messages " + str(self.messages))
-
-    def generate_folder(self):
-        #generate folder with the name of the book if it does not exist
-        pass
-    
-    def generate_chapter(self):
-        #generate chapter with the name of the chapter if it does not exist
-        pass'''
 
 init = Book()
         
