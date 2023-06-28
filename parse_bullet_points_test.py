@@ -629,9 +629,7 @@ Chapter 10: The New Frontier
 import re
 import json
 
-# just need to fix the problem here
-def parse_outline_to_json(outline_text):
-    # Regular expressions to identify chapters, topics, and bullet points
+def parse_outline_to_json(outline_text):    
     chapter_patterns = [
         re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
         re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
@@ -640,11 +638,9 @@ def parse_outline_to_json(outline_text):
     ]
     topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
     topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
-    topic_patterns = [topic_pattern1, topic_pattern2]
+    topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
+    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3]
     bullet_pattern = re.compile(r"^\s*-\s+(.+)$")
-    # Data structure to store the extracted data
-    data = {}
-    current_chapter = None
     is_inside_topic = False
     is_topic = False
     l_total = []
@@ -654,32 +650,31 @@ def parse_outline_to_json(outline_text):
     lines = [line for line in lines if line.strip() != '']
     for line in lines:
         is_topic = False
-        #check if line matches the pattern of a chapter if yes set isinsidetopic to false
-        # Match chapter
         for chapter_pattern in chapter_patterns:
             chapter_match = chapter_pattern.match(line)
             if chapter_match:
                 is_inside_topic = False
-        # Check if line matches one of the patterns from topic_patterns
         for topic_pattern in topic_patterns:
             topic_match = topic_pattern.match(line)
             if topic_match:
+                #topic is not matched 
+                #i am matching only  1. Liam's background and move to Berlin. but should also match - Topic 1: Liam's INTJ personality and its influence on his life and career.
+                print("topic match")
+                print(topic_match)
                 is_topic = True
                 is_inside_topic = True 
                 if l:
                     l_total.append(l)
                     l = []
                 break
-        #if istopic is not true and is_inside_topic = True than append line to l 
         if not is_topic and is_inside_topic:
             l.append(line)
-            #this somehow did not work  
             if lines.index(line) == len(lines) - 2:
                 l_total.append(l)
     print(l_total)
             
             
 
-parse_outline_to_json(outline_one)
+parse_outline_to_json(outline_two)
 
 # in the case of outline_two the topic for example: ""Topic 1: Liam's INTJ personality and its influence on his life and career." is also added to the list which shouldnt be the case
