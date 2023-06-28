@@ -661,6 +661,7 @@ def parse_chapters(outline):
             if chapter_match:
                 chapter = chapter_match.group(2)
                 chapters.append(chapter)
+                break
     print(chapters)
                 
                 
@@ -669,13 +670,13 @@ def parse_chapters(outline):
     chapters = re.findall(chapter_pattern, outline)
     return chapters"""
     
-parsed_outline_one = parse_chapters(outline_one)
-parsed_outline_two = parse_chapters(outline_two)
-parsed_outline_three = parse_chapters(outline_three)
-parsed_outline_four = parse_chapters(outline_four)
+parsed_outline_one = parse_chapters(outline_three)
+#parsed_outline_two = parse_chapters(outline_two)
+#parsed_outline_three = parse_chapters(outline_three)
+#parsed_outline_four = parse_chapters(outline_four)
 print(parsed_outline_one)
-print(parsed_outline_two)
-print(parsed_outline_three)
-print(parsed_outline_four)
-print(parsed_outline_four)
+#print(parsed_outline_two)
+#print(parsed_outline_three)
+#print(parsed_outline_four)
+#pyprint(parsed_outline_four)
 

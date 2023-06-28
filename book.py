@@ -82,6 +82,7 @@ class Book():
                 if chapter_match:
                     chapter = chapter_match.group(2)
                     chapters.append(chapter)
+                    break
         self.parsed_chapters = chapters
         print ("parsed chapters:")
         print(self.parsed_chapters)
@@ -176,7 +177,6 @@ class Book():
                 "content": self.outline
             }
         ]
-        
         chapter = self.parsed_chapters[0]
         topic = list(self.parsed_topics.keys())[0]
         bullets = self.parsed_bullet_points[0]

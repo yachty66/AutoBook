@@ -4,7 +4,7 @@
 - [x] remove "--"
 - [x] remove the **content** below an 
 - [x] check what else is wrong / missing
-- [ ] write automation script which is automating this
+- [x] write automation script which is automating this
     - write book parameters for intj -
     - write get chapters method where i read the book parameters and make a request - 
     - see / compare the quality of the output with my chatgpt output - 
@@ -25,9 +25,13 @@
     - fix current error from init book -
         - find out why chapters are empty -
     - fix also why topics are empty - 
-    - make sure that accessing for prompt in book generation everything is alrigh still
-    - create method for continuation of book generation 
-    - next steps
+    - make sure that accessing for prompt in book generation everything is alrigh still -
+    - create method for continuation of book generation --> write continuation to next file
+- [ ] new block
+    - find out why so many chapters are printed and fix that
+    - fix the error which occured
+
+
 - [ ] create book title
 - [ ] create book cover
 - [ ] ask chatgpt what else is missing for a book (like author and chapter part)
