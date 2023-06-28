@@ -673,8 +673,7 @@ def parse_outline_to_json(outline_text):
                 l_total.append(l)
     print(l_total)
             
-            
-
-parse_outline_to_json(outline_two)
+        
+parse_outline_to_json(outline_one)
 
 # in the case of outline_two the topic for example: ""Topic 1: Liam's INTJ personality and its influence on his life and career." is also added to the list which shouldnt be the case
