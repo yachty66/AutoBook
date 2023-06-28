@@ -87,17 +87,37 @@ class Book():
         print(self.parsed_chapters)
         
     def parse_topics(self):
-        # Add the topics and the number of the chapter where the topic is mentioned
-        topics = re.findall(r'(?<=Chapter )(\d+)|- Topic \d+: (.+)|^\d\. (.+):|^- (.+):|^\d\. (.+)$', self.outline, re.MULTILINE)
-        cleaned_topics = {}
-        current_chapter = 0
-        for topic in topics:
-            if topic[0]:
-                current_chapter = int(topic[0])
-            else:
-                topic_text = topic[1] if topic[1] else (topic[2] if topic[2] else (topic[3] if topic[3] else topic[4]))
-                cleaned_topics[f"{topic_text}"] = current_chapter
-        self.parsed_topics = cleaned_topics
+        chapter_patterns = [
+                re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
+                re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
+                re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+            ]
+        topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
+        topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
+        topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3]
+        lines = self.outline.split("\n")
+        lines = [line for line in lines if line.strip() != '']
+        l = []
+        l_total = []
+        for line in lines:
+            for chapter_pattern in chapter_patterns:
+                    chapter_match = chapter_pattern.match(line)
+                    if chapter_match:
+                        if l:
+                            l_total.append(l)
+                            l = []
+                        break
+            for topic_pattern in topic_patterns:
+                topic_match = topic_pattern.match(line)
+                if topic_match:
+                    l.append(topic_match.group(1))
+                    print(l)
+                    break
+            if line == lines[-1] and l:
+                l_total.append(l)
+        self.parsed_topics = l_total
         print ("parsed topics:")
         print(self.parsed_topics)
         
@@ -157,7 +177,7 @@ class Book():
             }
         ]
         
-        chapter = self.parsed_chapters['chapters'][0]
+        chapter = self.parsed_chapters[0]
         topic = list(self.parsed_topics.keys())[0]
         bullets = self.parsed_bullet_points[0]
         formatted_bullets = '\n'.join([f'{bullet.strip()}' for bullet in bullets])

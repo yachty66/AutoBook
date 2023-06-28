@@ -22,8 +22,10 @@
         -  add same prompts to message like prompt one in chatgpt 
     - write content directly to an file -
     - add generate init book method to book.py -
-    - fix current error from init book
-        - find out why chapters are empty 
+    - fix current error from init book -
+        - find out why chapters are empty -
+    - fix also why topics are empty - 
+    - make sure that accessing for prompt in book generation everything is alrigh still
     - create method for continuation of book generation 
     - next steps
 - [ ] create book title

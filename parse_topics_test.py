@@ -634,53 +634,37 @@ import re
 
 outlines = [outline_one, outline_two, outline_three, outline_four]
 def parse_topics(outline):
-    # Add the topics and the number of the chapter where the topic is mentioned
-    topics = re.findall(r'(?<=Chapter )(\d+)|- Topic \d+: (.+)|^\d\. (.+):|^- (.+):|^\d\. (.+)$', outline, re.MULTILINE)
-    cleaned_topics = {}
-    current_chapter = 0
-    for topic in topics:
-        if topic[0]:
-            current_chapter = int(topic[0])
-        else:
-            topic_text = topic[1] if topic[1] else (topic[2] if topic[2] else (topic[3] if topic[3] else topic[4]))
-            cleaned_topics[f"{topic_text}"] = current_chapter
-    print(cleaned_topics)
-    return cleaned_topics
+    chapter_patterns = [
+            re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
+            re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
+            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
+            re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+        ]
+    topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
+    topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
+    topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
+    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3]
+    lines = outline.split("\n")
+    lines = [line for line in lines if line.strip() != '']
+    l = []
+    l_total = []
+    for line in lines:
+        for chapter_pattern in chapter_patterns:
+                chapter_match = chapter_pattern.match(line)
+                if chapter_match:
+                    if l:
+                        l_total.append(l)
+                        l = []
+                    break
+        for topic_pattern in topic_patterns:
+            topic_match = topic_pattern.match(line)
+            if topic_match:
+                l.append(topic_match.group(1))
+                print(l)
+                break
+        if line == lines[-1] and l:
+            l_total.append(l)
 
-parse_topics(outline_two)
 
-'''for outline in outlines:
-    topics = parse_topics(outline)
-    print(len(topics))
-    print(topics)
-'''
-
-
-
-"""
-import re
-
-outlines = [outline_one, outline_two, outline_three, outline_four]
-def parse_topics(outline):
-    # Add the topics and the number of the chapter where the topic is mentioned
-    topics = re.findall(r'(?<=Chapter )(\d+)|- Topic \d+: (.+)|^\d\. (.+):|^- (.+):|^\d\. (.+)$', outline, re.MULTILINE)
-    cleaned_topics = {}
-    current_chapter = 0
-    for topic in topics:
-        if topic[0]:
-            current_chapter = int(topic[0])
-        else:
-            topic_text = topic[1] if topic[1] else (topic[2] if topic[2] else (topic[3] if topic[3] else topic[4]))
-            cleaned_topics[f"Chapter {current_chapter}: {topic_text}"] = current_chapter
-    print(cleaned_topics)
-    return cleaned_topics
-
-print(parse_topics(outline_one))
-
-'''for outline in outlines:
-    topics = parse_topics(outline)
-    print(len(topics))
-    print(topics)
-'''
-
-"""
+parse_topics(outline_four)
+                
