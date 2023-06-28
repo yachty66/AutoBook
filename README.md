@@ -19,6 +19,11 @@
     - save all topics in the dictionary - 
     - integrate bullet point parser and test it in application - 
     - generate method for initial book generation --> start now with elaborating on [name of chapter] with the topic [name of topic] and his bullet points: [all bullet points of the topic]
+        -  add same prompts to message like prompt one in chatgpt 
+    - write content directly to an file -
+    - add generate init book method to book.py -
+    - fix current error from init book
+        - find out why chapters are empty 
     - create method for continuation of book generation 
     - next steps
 - [ ] create book title

@@ -15,12 +15,17 @@ class Book():
             }
         ]
         self.outline = ""
+        self.book = ""
+        self.parsed_chapters = ""
+        self.parsed_topics = ""
+        self.parsed_bullet_points = ""
         self.chapters()
         self.topics()
         self.bullet_points()
         self.parse_chapters()
         self.parse_topics()
         self.parse_bullet_points()
+        self.init_book_generation()
         #todo skip for now because consistency was always given
         #self.inconsistencies()
         #self.add_message()
@@ -38,6 +43,7 @@ class Book():
         chapters = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
         #append chapters to self.message
         self.messages.append({"role": "assistant", "content": chapters})
+        #self.str_chapters = chapters
         print("Chapters:")
         print(chapters)
         
@@ -48,6 +54,7 @@ class Book():
         topics = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
         #append topics to self.message
         self.messages.append({"role": "assistant", "content": topics})
+        #self.str_topics = topics 
         print("Topics:")
         print(topics)
         
@@ -60,12 +67,24 @@ class Book():
         print(bullet_points)
         
     def parse_chapters(self):
-        #Chapter 1: "The Reluctant Genius", **Chapter 1: The Whispers of Genius**
-        chapter_pattern = r'Chapter \d+: "(.*?)"'
-        chapters = re.findall(chapter_pattern, self.outline)
-        chapters_json = {'chapters': chapters}
+        chapter_patterns = [
+            re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
+            re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
+            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
+            re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+        ]
+        chapters = []
+        lines = self.outline.split("\n")
+        lines = [line for line in lines if line.strip() != '']
+        for line in lines:
+            for chapter_pattern in chapter_patterns:
+                chapter_match = chapter_pattern.match(line)
+                if chapter_match:
+                    chapter = chapter_match.group(2)
+                    chapters.append(chapter)
+        self.parsed_chapters = chapters
         print ("parsed chapters:")
-        print(chapters_json)
+        print(self.parsed_chapters)
         
     def parse_topics(self):
         # Add the topics and the number of the chapter where the topic is mentioned
@@ -78,8 +97,9 @@ class Book():
             else:
                 topic_text = topic[1] if topic[1] else (topic[2] if topic[2] else (topic[3] if topic[3] else topic[4]))
                 cleaned_topics[f"{topic_text}"] = current_chapter
+        self.parsed_topics = cleaned_topics
         print ("parsed topics:")
-        print(cleaned_topics)
+        print(self.parsed_topics)
         
     def parse_bullet_points(self):    
         chapter_patterns = [
@@ -117,12 +137,41 @@ class Book():
                 l.append(line)
                 if lines.index(line) == len(lines) - 2:
                     l_total.append(l)
+        self.parsed_bullet_points = l_total
         print("parsed bullet points:")
-        print(l_total)
+        print(self.parsed_bullet_points)
         
     def init_book_generation(self):
-        pass
+        messages = [
+            {
+                "role": "system",
+                "content": "you are a pro book author with the task of writing a book."
+            },
+            {
+                "role":"user",
+                "content": "write the outline of an book."
+            },
+            {
+                "role":"assistant",
+                "content": self.outline
+            }
+        ]
         
+        chapter = self.parsed_chapters['chapters'][0]
+        topic = list(self.parsed_topics.keys())[0]
+        bullets = self.parsed_bullet_points[0]
+        formatted_bullets = '\n'.join([f'{bullet.strip()}' for bullet in bullets])
+        message = f"""Start now with elaborating on chapter '{chapter}' with the topic '{topic}' and his bullet points:
+        {formatted_bullets}
+        """
+        messages.append({"role": "user", "content": message})
+        init_book = openai.ChatCompletion.create(model="gpt-4-0613", messages=messages, temperature = 1.0).choices[0].message["content"]
+        print("init book:")
+        print(init_book)
+        self.book += init_book
+        with open('book_content.txt', 'w') as file:
+            file.write(init_book)
+                    
     """def inconsistencies(self):
         self.messages.append({"role": "user", "content": f"are you seeing any inconsistencies with the outline of the following book?:\n\n{self.outline}"})
         inconsistencies = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]

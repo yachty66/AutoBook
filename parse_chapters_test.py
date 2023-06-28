@@ -464,18 +464,218 @@ Chapter 10: "The Defining Decision"
     - Tease potential plotlines or conflicts that could be explored in a sequel.
 """
 
+outline_four = """
+**Chapter 1: The Mind's Algorithm**
+   
+   1. Liam's early life and academic background in the Netherlands.
+      - Born and raised in the Netherlands.
+      - Early interest in computers and neuroscience.
+      - Pursuing a degree in computer science, specializing in artificial intelligence.
+
+   2. His move to Berlin and immersion in the tech scene.
+      - Decision to move to Berlin after graduation.
+      - Initial struggles and eventual integration into Berlin's tech scene.
+      - Establishing a reputation as a brilliant, albeit reserved, computer scientist.
+
+   3. His growing interest in cognitive enhancement, culminating in his decision to start his own research.
+      - Initial exposure to cognitive enhancement concepts.
+      - Increasing fascination with the potential of cognitive-enhancing substances.
+      - Decision to devote his time and resources to develop these substances.
+
+**Chapter 2: Synthesis in Solitude**
+   
+   1. The transformation of his Berlin apartment into a lab.
+      - Selection of a suitable room in his apartment for conversion.
+      - Acquisition of necessary equipment and materials.
+      - Successful transformation of the room into a functional lab.
+
+   2. The process of researching and experimenting with cognitive enhancement substances.
+      - Extensive research into neuroscience and biochemistry.
+      - Initial attempts at synthesizing Modafinil and LSD derivatives.
+      - Overcoming challenges and refining the synthesis process.
+
+   3. The successful synthesis of Modafinil and LSD derivatives.
+      - Successful creation of the first batch of substances.
+      - Initial testing and analysis of the substances.
+      - Satisfaction and excitement at the successful synthesis.
+
+**Chapter 3: The Cognitive Leap**
+   
+   1. Liam's decision to test the substances on himself.
+      - The ethical considerations and risks involved in self-experimentation.
+      - Decision to proceed with self-testing.
+      - Administration of the first dose.
+
+   2. The immediate effects and improvements he observes.
+      - Initial physical and mental responses to the substances.
+      - Noticeable improvements in cognitive abilities.
+      - Excitement and curiosity about the potential of these substances.
+
+   3. The long-term benefits and changes he experiences.
+      - Continued use of the substances and monitoring of effects.
+      - Significant enhancements in cognitive function over time.
+      - Realization of the potential impact of these substances on society.
+
+**Chapter 4: The Echo of Success**
+   
+   1. The scientific community's response to Liam's work.
+      - Initial skepticism and curiosity from the scientific community.
+      - Increasing recognition and validation of his work.
+      - Invitations to speak at conferences and contribute to scientific journals.
+
+   2. The growing public interest and media coverage.
+      - Media attention due to the revolutionary nature of his work.
+      - Public fascination with the idea of cognitive enhancement.
+      - Dealing with the pressures and expectations of the public eye.
+
+   3. Liam's initial reactions to his newfound success.
+      - Initial excitement and pride in his achievements.
+      - Gradual realization of the responsibilities and pressures that come with success.
+      - Struggle to balance his personal life with his professional obligations.
+
+**Chapter 5: The Unseen Predators**
+   
+   1. The introduction of antagonistic characters with ulterior motives.
+      - Introduction of characters interested in exploiting Liam's work for personal gain.
+      - Attempts to infiltrate Liam's life and steal his research.
+      - Liam's growing awareness of these threats.
+
+   2. The first signs of corporate espionage and threats.
+      - Discovery of attempts to steal his research data.
+      - Realization of the extent of corporate espionage in the tech industry.
+      - Efforts to secure his research and protect himself.
+
+   3. Liam's realization of the dangers his work has attracted.
+      - Understanding the potential misuse of his cognitive-enhancing substances.
+      - Fear and anxiety about the safety of his work.
+      - Decision to take measures to protect his research and himself.
+
+**Chapter 6: The Ethical Dilemma**
+   
+   1. The moral questions surrounding the use of cognitive enhancement substances.
+      - The ethical implications of cognitive enhancement.
+      - Public debate about the morality of using such substances.
+      - Liam's struggle with these ethical questions.
+
+   2. Liam's internal struggle with these ethical issues.
+      - Internal conflict about the rightness of his actions.
+      - Questioning the potential societal implications of his work.
+      - Struggle to reconcile his desire for progress with the potential risks.
+
+   3. The potential societal implications of widespread cognitive enhancement.
+      - The potential benefits of cognitive enhancement for society.
+      - The risks and dangers of widespread use of these substances.
+      - Liam's realization of the need for regulation and control.
+
+**Chapter 7: The Billionaire's Burden**
+   
+   1. Liam's rapid accumulation of wealth and its impact on his life.
+      - The sudden influx of wealth from his work.
+      - The changes in his lifestyle and relationships due to his wealth.
+      - The challenges and pressures of being a billionaire.
+
+   2. The legal challenges and scrutiny he faces due to his work.
+      - Legal issues related to the production and distribution of his substances.
+      - Scrutiny from regulatory bodies and the public.
+      - Efforts to navigate the legal landscape and protect his work.
+
+   3. His efforts to manage his newfound wealth and navigate the legal landscape.
+      - Hiring a team to manage his wealth and legal issues.
+      - Learning to navigate the complexities of the legal and financial world.
+      - Struggle to maintain his focus on his research amidst these distractions.
+
+**Chapter 8: The Corporate Chessboard**
+   
+   1. Liam's entry into the corporate world and its cutthroat dynamics.
+      - Decision to establish a company to produce and distribute his substances.
+      - Introduction to the corporate world and its competitive dynamics.
+      - Learning to navigate corporate politics and power plays.
+
+   2. The strategic alliances and betrayals he experiences.
+      - Formation of strategic alliances with other tech companies.
+      - Betrayals by trusted allies and the lessons learned.
+      - Understanding the necessity of strategic thinking in the corporate world.
+
+   3. The challenges and victories he encounters in this new arena.
+      - The obstacles and setbacks he faces in establishing his company.
+      - The victories and successes that validate his efforts.
+      - The realization of the rewards and challenges of corporate life.
+
+**Chapter 9: The Tipping Point**
+   
+   1. The escalating conflict and danger surrounding Liam and his work.
+      - Increased threats and attempts to sabotage his work.
+      - The pressure and stress of dealing with these threats.
+      - Attempts to protect his work and himself from these dangers.
+
+   2. The critical decisions he has to make regarding the future of cognitive enhancement.
+      - The decision to either continue his work or stop due to the threats.
+      - The potential implications of each decision for him and society.
+      - The struggle to make the right decision amidst the chaos.
+
+   3. The climax of the story, where Liam's choices come to a head.
+      - The culmination of all the conflicts and pressures in a dramatic climax.
+      - Liam's final decision and the immediate aftermath.
+      - The resolution of the immediate conflict and the setup for the future.
+
+**Chapter 10: The Algorithm's Aftermath**
+   
+   1. The immediate aftermath of Liam's decisions and the resolution of the conflict.
+      - The consequences of Liam's decision for him and his company.
+      - The resolution of the immediate threats and conflicts.
+      - The beginning of a new chapter in Liam's life.
+
+   2. The long-term impact of cognitive-enhancing substances on society.
+      - The widespread use of cognitive-enhancing substances in society.
+      - The benefits and drawbacks of this new reality.
+      - The ongoing debate about the ethics and regulation of these substances.
+
+   3. Liam's reflections on his journey and the future of cognitive enhancement.
+      - Reflections on his journey from a computer scientist to a tech titan.
+      - Thoughts on the future of cognitive enhancement.
+      - Hopes and fears for the future of technology and society.
+
+"""
+
 #parse all chapters from outline in a dict like {chapters: [chapter1, chapter2, chapter3, ...]}
 import re
 
-def parse_chapters(outline):
-    chapter_pattern = r"\*\*Chapter \d+: "
-    chapters = re.findall(chapter_pattern, outline)
-    return {'chapters': chapters}
 
+#was brauch ich i.e. wie soll der output ausssehen? nur die namen der chapter in einer liste **Chapter 1: "The Dreamer's Blueprint"** --> ["The Dreamer's Blueprint", ]
+
+
+
+def parse_chapters(outline):
+    chapter_patterns = [
+        re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
+        re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
+        re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
+        re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+    ]
+    chapters = []
+    lines = outline.split("\n")
+    lines = [line for line in lines if line.strip() != '']
+    for line in lines:
+        for chapter_pattern in chapter_patterns:
+            chapter_match = chapter_pattern.match(line)
+            if chapter_match:
+                chapter = chapter_match.group(2)
+                chapters.append(chapter)
+    print(chapters)
+                
+                
+            
+    """chapter_pattern = r'\*\*Chapter \d+: "(.*?)"\*\*'
+    chapters = re.findall(chapter_pattern, outline)
+    return chapters"""
+    
 parsed_outline_one = parse_chapters(outline_one)
 parsed_outline_two = parse_chapters(outline_two)
 parsed_outline_three = parse_chapters(outline_three)
+parsed_outline_four = parse_chapters(outline_four)
 print(parsed_outline_one)
 print(parsed_outline_two)
 print(parsed_outline_three)
+print(parsed_outline_four)
+print(parsed_outline_four)
 
