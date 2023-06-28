@@ -640,13 +640,11 @@ def parse_outline_to_json(outline_text):
     topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
     topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
     topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3]
-    bullet_pattern = re.compile(r"^\s*-\s+(.+)$")
     is_inside_topic = False
     is_topic = False
     l_total = []
     l = []
     lines = outline_text.split("\n")
-
     lines = [line for line in lines if line.strip() != '']
     for line in lines:
         is_topic = False
@@ -657,10 +655,6 @@ def parse_outline_to_json(outline_text):
         for topic_pattern in topic_patterns:
             topic_match = topic_pattern.match(line)
             if topic_match:
-                #topic is not matched 
-                #i am matching only  1. Liam's background and move to Berlin. but should also match - Topic 1: Liam's INTJ personality and its influence on his life and career.
-                print("topic match")
-                print(topic_match)
                 is_topic = True
                 is_inside_topic = True 
                 if l:
@@ -671,9 +665,7 @@ def parse_outline_to_json(outline_text):
             l.append(line)
             if lines.index(line) == len(lines) - 2:
                 l_total.append(l)
-    print(l_total)
             
         
 parse_outline_to_json(outline_one)
 
-# in the case of outline_two the topic for example: ""Topic 1: Liam's INTJ personality and its influence on his life and career." is also added to the list which shouldnt be the case
