@@ -624,63 +624,62 @@ Chapter 10: The New Frontier
    - His vision for a society where cognitive enhancement is used ethically and responsibly.
    - His commitment to influencing the future of cognitive enhancement and ensuring its ethical use.
 """
-#my current code is parsing outline two wrong because the the topic gets also parsed
-
-#make a liste like: "{"Chapter 1: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], "Chapter 2: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], ..., "Chapter 10: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]]}" given the different formats of outlines (outline_one, outline_two, outline_three, outline_four). you need to consider that all of this outlines are different and need different handling. the number stands for the current chapter and the list is a list of lists of bullets. it can also be the case that there are more than three bullets per topic. i need a method which takes as input an outline and returns the parsed content
+# my current code is parsing outline two wrong because the the topic gets also parsed
+# make a liste like: "{"Chapter 1: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], "Chapter 2: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]], ..., "Chapter 10: "some text":[["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...], ["bullet_one", "bullet_two", ...]]}" given the different formats of outlines (outline_one, outline_two, outline_three, outline_four). you need to consider that all of this outlines are different and need different handling. the number stands for the current chapter and the list is a list of lists of bullets. it can also be the case that there are more than three bullets per topic. i need a method which takes as input an outline and returns the parsed content
 import re
 import json
 
+# just need to fix the problem here
 def parse_outline_to_json(outline_text):
     # Regular expressions to identify chapters, topics, and bullet points
     chapter_patterns = [
         re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
-        re.compile(r'^Chapter (\d+): "(.*?)"$'),          # Format two
-        re.compile(r'^\*\*Chapter (\d+): (.*?)\*\*$'),    # Format three
-        re.compile(r'^Chapter (\d+): (.*?)$')             # Format four
+        re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
+        re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
+        re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
     ]
-    topic_pattern = re.compile(r'^\s*-?\s*\d*\.*\s*(.*:)\s*$')
-    bullet_pattern = re.compile(r'^\s*-\s+(.+)$')
-    
+    topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
+    topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
+    topic_patterns = [topic_pattern1, topic_pattern2]
+    bullet_pattern = re.compile(r"^\s*-\s+(.+)$")
     # Data structure to store the extracted data
     data = {}
     current_chapter = None
     is_inside_topic = False
-    
-    # Splitting outline into lines
-    lines = outline_text.split('\n')
-    
-    # Process each line in the outline
+    is_topic = False
+    l_total = []
+    l = []
+    lines = outline_text.split("\n")
+
+    lines = [line for line in lines if line.strip() != '']
     for line in lines:
+        is_topic = False
+        #check if line matches the pattern of a chapter if yes set isinsidetopic to false
         # Match chapter
         for chapter_pattern in chapter_patterns:
             chapter_match = chapter_pattern.match(line)
             if chapter_match:
-                chapter_number, chapter_title = chapter_match.groups()
-                chapter_key = f"Chapter {chapter_number}: \"{chapter_title}\""
-                data[chapter_key] = []
-                current_chapter = chapter_key
                 is_inside_topic = False
+        # Check if line matches one of the patterns from topic_patterns
+        for topic_pattern in topic_patterns:
+            topic_match = topic_pattern.match(line)
+            if topic_match:
+                is_topic = True
+                is_inside_topic = True 
+                if l:
+                    l_total.append(l)
+                    l = []
                 break
-        
-        # Match topics
-        topic_match = topic_pattern.match(line)
-        if topic_match and current_chapter:
-            data[current_chapter].append([])
-            is_inside_topic = True
-            continue
-        
-        # Match bullet points inside a topic
-        if is_inside_topic and current_chapter:
-            bullet_match = bullet_pattern.match(line)
-            if bullet_match:
-                data[current_chapter][-1].append(bullet_match.group(1))
-    
-    # Convert the nested dictionary into JSON string
-    json_output = json.dumps(data, indent=4)
-    print(json_output)
-    return json_output
+        #if istopic is not true and is_inside_topic = True than append line to l 
+        if not is_topic and is_inside_topic:
+            l.append(line)
+            #this somehow did not work  
+            if lines.index(line) == len(lines) - 2:
+                l_total.append(l)
+    print(l_total)
+            
+            
 
+parse_outline_to_json(outline_one)
 
-parse_outline_to_json(outline_four)
-
-#in the case of outline_two the topic for example: ""Topic 1: Liam's INTJ personality and its influence on his life and career." is also added to the list which shouldnt be the case
+# in the case of outline_two the topic for example: ""Topic 1: Liam's INTJ personality and its influence on his life and career." is also added to the list which shouldnt be the case
