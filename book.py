@@ -178,7 +178,7 @@ class Book():
             }
         ]
         chapter = self.parsed_chapters[0]
-        topic = list(self.parsed_topics.keys())[0]
+        topic = self.parsed_topics[0][0]
         bullets = self.parsed_bullet_points[0]
         formatted_bullets = '\n'.join([f'{bullet.strip()}' for bullet in bullets])
         message = f"""Start now with elaborating on chapter '{chapter}' with the topic '{topic}' and his bullet points:
