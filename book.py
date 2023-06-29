@@ -63,11 +63,11 @@ class Book():
         self.messages.append({"role": "user", "content": "create detailed bullet points for each of the topics. don't abbreviate anything. provide the bullet points for each topics!"})
         bullet_points = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
         self.messages.append({"role": "assistant", "content": bullet_points})
+        self.outline += bullet_points
         self.parse_chapters()
         for i in range(3):
         #print("outline number " + str(i) + ":" + outline)
             if len(self.parsed_chapters) == 10:
-                self.outline += bullet_points
                 break
             else:
                 #print("not enough chapter")
@@ -205,6 +205,47 @@ class Book():
             file.write(init_book)
             
     def continue_book(self):
+        messages = [
+            {
+                "role": "system",
+                "content": "you are a pro book author with the task of writing a book."
+            },
+            {
+                "role":"user",
+                "content": "write the outline of an book."
+            },
+            {
+                "role":"assistant",
+                "content": self.outline
+            }
+        ] 
+        for i in range(len(self.parsed_chapters)):
+            chapter = self.parsed_chapters[i]
+            start_index = 1 if i == 0 else 0
+            for j in range(start_index, len(self.parsed_topics[i])):
+                topic = self.parsed_topics[i][j]
+                bullets = self.parsed_bullet_points[i][j]
+                formatted_bullets = '\n'.join([f'{bullet.strip()}' for bullet in bullets])
+                #make request 
+                message = f"""proceed now with elaborating on chapter '{chapter}' with the topic '{topic}' and his bullet points:
+                {formatted_bullets}
+                
+                the previous content of the book is:
+                
+                {previous_content}
+                """
+                messages.append({"role": "user", "content": message})
+                continue_book = openai.ChatCompletion.create(model="gpt-4-0613", messages=messages, temperature = 1.0).choices[0].message["content"]
+                previous_content = continue_book
+                #remove last message again
+                messages.pop()
+                print("----------------continue book:----------------")
+                print(continue_book)
+                self.book += '\n\n' + continue_book
+                with open('book_content.txt', 'a') as file:
+                    file.write('\n\n' + continue_book)
+        
+        
         pass
                     
     """def inconsistencies(self):

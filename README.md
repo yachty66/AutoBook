@@ -31,11 +31,10 @@
     - find out why so many chapters are printed and fix that - 
     - fix the error which occured -
     - find out why i am still getting the mad error of multiple chapters -
-    - fix problem that i sometimes dont get all chapters 
-
-
-
-    - make test file where i make continuaton working
+    - fix problem that i sometimes dont get all chapters - 
+    - make test file where i make continuaton working, i.e. write a whole book via continuation - 
+    - implement continue book function 
+    - start with cleanup book function
 
 
 
