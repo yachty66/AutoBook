@@ -34,10 +34,11 @@
     - fix problem that i sometimes dont get all chapters - 
     - make test file where i make continuaton working, i.e. write a whole book via continuation - 
     - implement continue book function -
-    - start with cleanup book function
-        - remove all duplicate chapters and write result back to file 
-        - remove all lines which introduce a topic and write result back to file 
-        - before a new chapter begins make 2 new lines otherwise only one new line
+    - start with cleanup book function -
+        - remove all duplicate chapters and write result back to file - 
+        - remove all lines which introduce a topic and write result back to file - 
+    - clean code and add print statements everywhere to understand every step which is happening
+    - create my first book 
 
 
 

@@ -1,8 +1,6 @@
 import openai 
-import requests
 from bs4 import BeautifulSoup
 import re
-import json
 
 openai.api_key = "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"
 
@@ -27,59 +25,48 @@ class Book():
         self.parse_bullet_points()
         self.init_book()
         self.continue_book()
-        #todo skip for now because consistency was always given
-        #self.inconsistencies()
-        #self.add_message()
-        #self.openai_request()
+        self.process_book()
         
     def chapters(self):
-        #read content from prompt.md and append in same format as messagess
+        print("calling chapters method")
         file_path = "prompt.md"
         with open(file_path, 'r') as file:
-            # Read the content of the file
             content = file.read()
-        #add to self.messages
         self.messages.append({"role": "user", "content": content})    
-        #make a request to openai and see how the content looks like
         chapters = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
-        #append chapters to self.message
         self.messages.append({"role": "assistant", "content": chapters})
-        #self.str_chapters = chapters
-        print("Chapters:")
+        print("chapters:")
         print(chapters)
         
     def topics(self):
-        #add "create topics for each of the chapters" to self.messages
+        print("calling topics method")
         self.messages.append({"role": "user", "content": "create three topics for each of the chapters"})
-        #make new request to openai and see how the content looks like
         topics = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
-        #append topics to self.message
         self.messages.append({"role": "assistant", "content": topics})
-        #self.str_topics = topics 
-        print("Topics:")
+        print("topics:")
         print(topics)
         
     def bullet_points(self):
+        print("calling bullet points method")
         self.messages.append({"role": "user", "content": "create detailed bullet points for each of the topics. don't abbreviate anything. provide the bullet points for each topics!"})
         bullet_points = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
         self.messages.append({"role": "assistant", "content": bullet_points})
         self.outline += bullet_points
         self.parse_chapters()
         for i in range(3):
-        #print("outline number " + str(i) + ":" + outline)
             if len(self.parsed_chapters) == 10:
                 break
             else:
-                #print("not enough chapter")
                 self.messages.append({"role": "user", "content": "continue to have bullet points for each topic of the ten chapters."})
                 bullet_points = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
                 self.outline += "\n" + bullet_points    
                 self.messages.append({"role": "assistant", "content": bullet_points})
                 self.parse_chapters()
-        print("Bullet Points:")
+        print("bullet Points:")
         print(bullet_points)
         
     def parse_chapters(self):
+        print("calling parse chapters method")
         chapter_patterns = [
             re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
             re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
@@ -101,6 +88,7 @@ class Book():
         print(self.parsed_chapters)
         
     def parse_topics(self):
+        print("calling parse topics method")^
         chapter_patterns = [
                 re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
                 re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
@@ -134,7 +122,8 @@ class Book():
         print ("parsed topics:")
         print(self.parsed_topics)
         
-    def parse_bullet_points(self):    
+    def parse_bullet_points(self):   
+        print("calling parse bullet points method") 
         chapter_patterns = [
             re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
             re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
@@ -175,6 +164,7 @@ class Book():
         print(self.parsed_bullet_points)
         
     def init_book(self):
+        print("calling init book method")
         messages = [
             {
                 "role": "system",
@@ -201,10 +191,12 @@ class Book():
         print("init book:")
         print(init_book)
         self.book += init_book
+        #todo change this name later
         with open('book_content.txt', 'w') as file:
             file.write(init_book)
             
     def continue_book(self):
+        print("calling continue book method")
         messages = [
             {
                 "role": "system",
@@ -226,7 +218,6 @@ class Book():
                 topic = self.parsed_topics[i][j]
                 bullets = self.parsed_bullet_points[i][j]
                 formatted_bullets = '\n'.join([f'{bullet.strip()}' for bullet in bullets])
-                #make request 
                 message = f"""proceed now with elaborating on chapter '{chapter}' with the topic '{topic}' and his bullet points:
                 {formatted_bullets}
                 
@@ -237,9 +228,8 @@ class Book():
                 messages.append({"role": "user", "content": message})
                 continue_book = openai.ChatCompletion.create(model="gpt-4-0613", messages=messages, temperature = 1.0).choices[0].message["content"]
                 previous_content = continue_book
-                #remove last message again
                 messages.pop()
-                print("----------------continue book:----------------")
+                print("continue book:")
                 print(continue_book)
                 self.book += '\n\n' + continue_book
                 with open('book_content.txt', 'a') as file:
@@ -247,6 +237,7 @@ class Book():
                     
                     
     def process_book():
+        print("calling process book method")
         with open('book_content.txt', 'r') as file:
             lines = [line.strip() for line in file]
         previous_chapter_number = None
@@ -269,23 +260,7 @@ class Book():
                     continue
                 file.write(cleaned_lines[i] + '\n')
                     
-    """def inconsistencies(self):
-        self.messages.append({"role": "user", "content": f"are you seeing any inconsistencies with the outline of the following book?:\n\n{self.outline}"})
-        inconsistencies = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
-        print("inconsistencies:")
-        print(inconsistencies)
-        self.messages.append({"role": "assistant", "content": inconsistencies})
-        #please make corrections to the outline
-        self.messages.append({"role": "user", "content": "please make corrections to the chapters, topics and bullet points in the case of inconsistencies and respond with the corrected outline. include every chapter also if its consistent already"})
-        corrections = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
-        print("corrections:")
-        print(corrections)"""
-        
-
 init = Book()
-        
-#Chapters:
-#Chapter 1: "An Unconventional Mind"
-#- Introduction to Liam, his background, personality, and his life in the Netherlands. His move to Berlin and his fascination with cognitive enhancement.
+    
 
 
