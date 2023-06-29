@@ -245,6 +245,30 @@ class Book():
                 with open('book_content.txt', 'a') as file:
                     file.write('\n\n' + continue_book)
                     
+                    
+    def process_book():
+        with open('book_content.txt', 'r') as file:
+            lines = [line.strip() for line in file]
+        previous_chapter_number = None
+        cleaned_lines = []
+        for line in lines:
+            match = re.match(r'Chapter (\d+):', line)
+            if match:
+                current_chapter_number = int(match.group(1))
+                if current_chapter_number == previous_chapter_number:
+                    continue
+                else:
+                    previous_chapter_number = current_chapter_number
+            elif re.match(r'(Topic \d+:|- Topic \d+:|\*\D+\*|\d+\.\D+:|- \D+:)', line):
+                continue
+            cleaned_lines.append(line)
+        lines = cleaned_lines
+        with open('new_book_content.txt', 'w') as file:
+            for i in range(len(cleaned_lines)):
+                if i > 0 and cleaned_lines[i] == '' and cleaned_lines[i-1] == '':
+                    continue
+                file.write(cleaned_lines[i] + '\n')
+                    
     """def inconsistencies(self):
         self.messages.append({"role": "user", "content": f"are you seeing any inconsistencies with the outline of the following book?:\n\n{self.outline}"})
         inconsistencies = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
