@@ -253,7 +253,6 @@ def continue_book():
 def process_book():
     with open('test.txt', 'r') as file:
         lines = [line.strip() for line in file]
-    print(lines)
     previous_chapter_number = None
     cleaned_lines = []
     for line in lines:
@@ -271,17 +270,13 @@ def process_book():
             continue
         cleaned_lines.append(line)
     lines = cleaned_lines
-    
-    #next i want to match topics and if i can find them remove them. here is how topics can look like: 
-    #Topic 2: The initial challenges and breakthroughs in his research. OR *Dutch windmills, tulip fields, and canals* OR - The global impact of the cognitive enhancement algorithm: OR 1. Liam's background and move to Berlin. OR - Topic 1: Liam's INTJ personality and its influence on his life and career. OR 1. Liam's Early Life and Background:
-    
-    
-    
-    
+    print(lines)
     with open('test2.txt', 'w') as file:
-        for line in cleaned_lines:
-            file.write(line + '\n')
-    
+        for i in range(len(cleaned_lines)):
+            # Avoid writing two or more consecutive empty lines
+            if i > 0 and cleaned_lines[i] == '' and cleaned_lines[i-1] == '':
+                continue
+            file.write(cleaned_lines[i] + '\n')
     
          
 process_book()

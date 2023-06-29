@@ -10,7 +10,6 @@ His early exposure to the world of academia was complemented perfectly by hands-
 
 This balance of academic stimulation and technical exposure, coupled with his natural predisposition for science, cultivated a strong foundation that would come to define Liam's future endeavors. Even from his earliest memories, Liam was destined to eclipse the intellectual achievements of his family's past generations, and indeed, to make a deep, indelible mark on the canvas of neuroscience and cognitive science. His journey began right here, in a household in the Netherlands, filled with the vigor of intellectual pursuit, the clattering of a keyboard, and a boy's insatiable curiosity. Little did they know, they were raising a prodigy who would change the world's understanding of the human mind.
 
-
 A conspicuous reflection of his environment, Liam began to develop unique interests that combined the essences of his parent's work - the realms of computer science and biology. Young, dynamic, and already immersed in two seemingly disparate disciplines, he started wrestling with an important question quite early on: could machines learn in a manner similar to the human brain?
 
 While his father’s world of coding and hardware intrigued him, his mother’s explorations of life and its underlying mechanisms drew him in too. Both fields seemed disjoint, the strict logic of machines contrasting the fluid, organic nature of biology. Yet, it was here that Liam's interest found a nucleus. He distinctly remembers reading a book his mother had left on the coffee table — 'The Tell-Tale Brain' by V.S. Ramachandran. As he dived deeper into the mysteries of the human mind, he was fascinated by the complex and intricate nature of the brain and its functions, from perception to cognition. It was like standing on the precipice of uncharted territory, the sheer vastness and complexity of the subject captivating him.
@@ -20,8 +19,6 @@ Could the principles of logic and coding be applied to comprehend the functions 
 To satisfy his curiosity, Liam chose to study both computer science and neuroscience for his undergraduate degree at Utrecht University. He excelled in both fields, of course, but more importantly, he had noticed a serendipitous intersection — data processing algorithms and neural mechanisms of cognition had an uncanny resemblance. This sparked new questions in his head — ones about artificial intelligence, neural networks, and even cognitive enhancement. His undergraduate years were filled with rigorous exploration of these topics, each research paper and project subtly shaping the trajectory of his future ambitions.
 
 By the end of his university years, Liam held an extraordinary perspective — one where 0s and 1s intertwined with neurons and synapses, creating a unique canvas for understanding human cognition. His relentless curiosity and the intellectual environment fostered by his parents had fully prepared him for his next step — the vibrant tech scene in Berlin. As Liam graduated from Utrecht University with impressive grades and a promising research portfolio, he decided to join a tech start-up in Berlin, where he could indulge more deeply in his interests and perhaps even carve the future of cognitive enhancement. But no one could have anticipated that this shy Dutch genius was destined for something grander than anyone’s wildest dreams. His euphoric journey was just beginning...
-
-
 
 Throughout university, the tech scene in Berlin had always intrigued Liam. Deutschland's capital city, Berlin, was rapidly becoming a tech haven in Europe. New start-ups were popping up with regular ease, and established IT giants were opening up offices, drawn by the city's diverse talent pool and innovative environment. Berlin was, so to speak, an attractive magnet for tech enthusiasts, luring them in with its combination of old-world charm and new-age innovation.
 
@@ -47,8 +44,6 @@ Despite the language barrier and cultural differences, Liam eased into his new l
 
 For Liam, this move had marked a new beginning. The city was waiting for him to make his mark on its promising tech canvas, and he was just getting started. Even in those early days, it was clear to him that Berlin had significantly more to offer than just a change of scenery. It held the promise of making his dreams of cognitive enhancement a reality and held the prospects of unimaginable technological breakthroughs. Little did he know then, how truly prophetic these feelings would be.
 
-
-
 Having set up his personal laboratory, it was time for Liam to dive into the heart of his intellectual pursuit. His fascination with the human brain had been steadily growing since his initial discovery of a book on neuroscience. A topic previously relegated to medical professionals and scientists had suddenly become accessible and intriguing for a computer science graduate. Now, in his Berlin loft, Liam found himself at the intersection of computer science and neuroscience, ready to unravel the mysteries of cognitive enhancement.
 
 However, the road was far from smooth. Initial experimentation led to frustration, failures, and countless sleepless nights. Instead of the anticipated breakthroughs, Liam encountered problem after problem. The nascent field of cognitive neuroscience was thick with uncharted territories, and integrating it with computer-based models proved more challenging than he'd imagined. Days turned into weeks, and weeks into months, but every hypothesis Liam tested seemed to end up in a deadlock.
@@ -67,8 +62,6 @@ He often thought back to the inspiration that had sprouted from the book he'd re
 
 From there, Liam's research kicked off in earnest. The countless nights of perseverance had finally paid off. His ambition to unravel the secrets of the brain had led him to this innovatively multicultural city, where he would face more challenges, more breakthroughs, and more moments of debilitating frustration. Yet, every small success would lead him closer to the vision he held dear — the possibility of cognitive enhancement — and as he later discovered, also toward a series of unexpected and thrilling adventures.
 
-
-
 On the personal front, Liam was appreciating the challenge of adapting to a new culture. Berlin proved to be a splendid mix of modernity and history, brimming with unique experiences ready for him to explore. The city's youthful energy appeared to mirror his own internal dynamism, driving him to grow both personally and professionally.
 
 What stood out were the vibrant street art, spontaneous parties in parks and squares, bustling farmers' markets, and the tangible history in every corner of the city. The more he explored Berlin, the more he fell in love with its eclectic nature. The city’s individualistic spirit seemed to encourage his organic process of self-discovery. Despite the language barriers and cultural differences, he was gradually becoming intertwined with the very fabric of Berlin, turning what was supposed to be a temporary stay into a long-term, intimate relationship with the city.
@@ -81,11 +74,7 @@ In his personal life, Liam maintained a small group of friends who had a similar
 
 Despite his sometimes grueling and exhausting regimen, Liam's life in Berlin was enlivening. Beyond the breakthroughs and the setbacks in his research, it was this city - Berlin - with its edgy persona, which breathed life into his grand vision, intertwined as both the backdrop and catalyst in Liam's grand journey of cognitive enhancement. The intersection of his personal and professional life all led right here, within the heart of this extraordinary city. Unknown to him at the time, he was about to make a discovery that would forever change the course of his life, and perhaps, the future of cognitive neuroscience.
 
-
-
-
 Chapter 3: "The Synthesis: Birth of a Breakthrough"
-
 
 After a long day of work at the startup, Liam would eagerly retreat to his home-based lab, a safe haven where he could lose himself in the complex maze of cognitive neuroscience research. Surrounded by cutting-edge computational machinery, formidable chemistry equipment, and stacks of scientific literature, Liam, in the warm glow of the overhead lamp, would embark on his audacious quest to enhance human cognition.
 
@@ -102,7 +91,6 @@ Despite the meticulous methodology, the synthesis process was not without its fa
 Finally, after numerous attempts, the Eureka moment arrived. A stable, synthesized neuro-enhancer emerged. The product of rigorous research, tireless experimentation, and countless failures was finally ready. Even though the product was a mere speck of white, powdery substance lying at the bottom of a petri dish, it held vast potential.
 
 The synthesis of the new cognitive-enhancing molecule was just the beginning, marking the birth of a breakthrough that could revolutionize our understanding of human cognition. As Liam looked at the fruit of his labor, he could barely contain his excitement. Little did he know that this speck would soon thrust him into the heart of multiple raging storms, from scientific controversies to moral dilemmas, and future shaping decisions.
-
 
 As Liam excitedly gazed at the speck of white substance, a tide of emotions washed over him. The thrill of achieving a significant breakthrough gripped him first. He had spent countless sleepless nights engrossed in his research, performing meticulous calculations, painstakingly fine-tuning the molecular structures, and observing chemical reactions with bated breath. Finally, his hard work, resilience, and unwavering faith in his hypothesis had paid off. The sheer joy and sense of validation were indescribable, driving him to punch the air in elation.
 
