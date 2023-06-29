@@ -637,13 +637,154 @@ outline_four = """
 
 """
 
+outline_five = """
+Chapter 1: "The Spark of Genius"
+1. Liam's childhood in the Netherlands: early signs of genius.
+   - Introduction of Liam's character, his early life in the Netherlands
+   - Showcasing his intellectual capabilities and curiosity from a young age
+   - His fascination with technology and how he taught himself programming
+2. The development of his interest in cognitive enhancement.
+   - His encounter with cognitive science and its impact on him
+   - His growing interest in cognitive enhancement and its potential
+   - How he decided to delve deeper into this field
+3. The pivotal decision to pursue his passion.
+   - His decision to move to Berlin to explore opportunities
+   - The sacrifices he made to follow his passion
+   - His optimism and determination to succeed
+
+Chapter 2: "The Berlin Laboratory"
+1. Moving to Berlin: a new city, a new life.
+   - His journey to Berlin, adapting to the new city
+   - The contrast between his life in the Netherlands and Berlin
+   - His initial struggles and how he overcame them
+2. Setting up his lab: challenges and triumphs.
+   - The process of setting up his lab, the challenges he faced
+   - His determination to create a conducive environment for his work
+   - His first triumphs in the lab, setting the stage for his future work
+3. The commencement of his ground-breaking research.
+   - The start of his research on cognitive enhancement
+   - The meticulous process, his dedication, and perseverance
+   - The first signs of progress, building anticipation
+
+Chapter 3: "The Mind’s New Frontier"
+1. The process of synthesizing Modafinil and LSD derivatives.
+   - Detailed description of his work, the process of synthesizing the substances
+   - The challenges, failures, and breakthroughs he experienced
+   - His relentless pursuit of success, showing his dedication
+2. The first successful experiments and results.
+   - The moment of success, the first successful experiment
+   - His reaction, the excitement, and satisfaction he felt
+   - The potential implications of this success
+3. The impact of these results on Liam's work and personal life.
+   - How the success changed his work, the new possibilities it opened
+   - The impact on his personal life, the changes in his lifestyle
+   - His hopes and fears for the future
+
+(continued in the next message due to character limit)
+Chapter 4: "The Cognitive Leap"
+1. The decision to personally use the substances.
+   - Liam's internal debate about using the substances personally
+   - His ultimate decision to test them on himself, the reasons behind it
+   - The preparation and the moment he first used the substances
+2. The experience of cognitive enhancement: benefits and drawbacks.
+   - Detailed description of the changes he experienced, the cognitive enhancement
+   - The benefits he enjoyed, how it improved his work and life
+   - The drawbacks and side effects, the physical and mental toll
+3. The initial excitement and optimism for the future.
+   - His excitement about the potential of cognitive enhancement
+   - His optimism for the future, his plans for his work
+   - The growing confidence and ambition, setting the stage for future challenges
+
+Chapter 5: "The Unwanted Spotlight"
+1. The scientific community's reaction to Liam's work.
+   - The reaction from the scientific community, both positive and negative
+   - The debates and discussions his work sparked
+   - His response to the feedback, how he handled the attention
+2. Dealing with the media and public attention.
+   - The media attention his work attracted, his interactions with the media
+   - The public's interest in his work, the fame and scrutiny he faced
+   - How he coped with the sudden spotlight, the impact on his personal life
+3. The first signs of trouble: unwanted attention from less scrupulous individuals.
+   - The first signs of trouble, the unwanted attention from dubious individuals
+   - The threats and challenges he faced, the danger to his work
+   - His initial response, the measures he took to protect himself and his work
+
+Chapter 6: "The Ethical Quandary"
+1. The ethical implications of cognitive enhancement.
+   - The ethical dilemmas his work presented, the potential misuse of cognitive enhancement
+   - The debates and discussions about the ethics of his work
+   - His own views on the ethical implications, his moral dilemma
+2. Liam's internal struggle with the potential misuse of his work.
+   - His internal struggle, the fear of his work being misused
+   - The moral questions he grappled with, his doubts and fears
+   - The impact of this struggle on his work and personal life
+3. The decision to continue or halt his research.
+   - The crucial decision he had to make, the factors he considered
+   - His thought process, the considerations and debates
+   - His ultimate decision, its implications for his future
+
+Chapter 7: "The Billionaire's Burden"
+1. The rapid success and wealth from his work.
+   - His sudden rise to wealth and success, the changes it brought
+   - The benefits and challenges of being a billionaire
+   - How he handled the sudden wealth, the impact on his lifestyle
+2. The new challenges that come with being a billionaire.
+   - The new challenges he faced, the pressures and expectations
+   - The changes in his relationships, the isolation and scrutiny
+   - His struggle to balance his work and personal life amidst the changes
+3. The impact of success on Liam's personal life and relationships.
+   - The impact of his success on his personal life, the changes in his relationships
+   - The strain on his friendships and family relationships
+   - His struggle to maintain his personal relationships amidst his success
+
+Chapter 8: "The Invisible Enemy"
+1. The threat of corporate espionage.
+   - The threat of corporate espionage, the danger to his work
+   - The incidents of attempted espionage, the breaches and attacks
+   - His response, the measures he took to protect his work
+2. The steps taken to protect his work.
+   - The steps he took to protect his work, the security measures
+   - The challenges he faced in securing his work
+   - The impact of the constant threat on his work and personal life
+3. The constant pressure and paranoia of being under threat.
+   - The constant pressure and paranoia, the mental toll it took
+   - His struggle to cope with the constant threat, the impact on his mental health
+   - The changes in his behavior and lifestyle due to the constant threat
+
+Chapter 9: "The Regulatory Gauntlet"
+1. The legal challenges faced due to his work.
+   - The legal challenges he faced, the lawsuits and regulatory issues
+   - His struggle to navigate the legal landscape, the battles he fought
+   - The impact of the legal challenges on his work and personal life
+2. The struggle to navigate complex regulations.
+   - The complex regulations he had to navigate, the challenges they presented
+   - His struggle to comply with the regulations, the hurdles he faced
+   - The impact of the regulatory challenges on his work, the changes he had to make
+3. The fight to keep his work alive amidst legal pressure.
+   - His fight to keep his work alive, the battles he fought
+   - His determination and resilience, his refusal to give up
+   - The outcome of his fight, the impact on his work and future
+
+Chapter 10: "The Crossroads of Destiny"
+1. The decision about the future of cognitive enhancement.
+   - The crucial decision about the future of cognitive enhancement
+   - His thought process, the considerations and debates
+   - His final decision, its implications for the future of cognitive enhancement
+2. Coming to terms with the societal impact of his work.
+   - His realization of the societal impact of his work, the changes it could bring
+   - His struggle to come to terms with the impact, his feelings and thoughts
+   - His acceptance of the impact, his role in shaping society
+3. Liam's final decision about his personal future and legacy.
+   - His decision about his personal future, his plans and aspirations
+   - His thoughts about his legacy, what he wants to leave behind
+   - His final decision, the conclusion of his journey, setting the stage for the future.
+"""
+
 #parse all chapters from outline in a dict like {chapters: [chapter1, chapter2, chapter3, ...]}
 import re
 
 
 #was brauch ich i.e. wie soll der output ausssehen? nur die namen der chapter in einer liste **Chapter 1: "The Dreamer's Blueprint"** --> ["The Dreamer's Blueprint", ]
-
-
 
 def parse_chapters(outline):
     chapter_patterns = [
@@ -670,7 +811,7 @@ def parse_chapters(outline):
     chapters = re.findall(chapter_pattern, outline)
     return chapters"""
     
-parsed_outline_one = parse_chapters(outline_three)
+parsed_outline_one = parse_chapters(outline_five)
 #parsed_outline_two = parse_chapters(outline_two)
 #parsed_outline_three = parse_chapters(outline_three)
 #parsed_outline_four = parse_chapters(outline_four)

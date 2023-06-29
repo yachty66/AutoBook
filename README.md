@@ -28,8 +28,15 @@
     - make sure that accessing for prompt in book generation everything is alrigh still -
     - create method for continuation of book generation --> write continuation to next file
 - [ ] new block
-    - find out why so many chapters are printed and fix that
-    - fix the error which occured
+    - find out why so many chapters are printed and fix that - 
+    - fix the error which occured -
+    - find out why i am still getting the mad error of multiple chapters -
+    - fix problem that i sometimes dont get all chapters 
+
+
+
+    - make test file where i make continuaton working
+
 
 
 - [ ] create book title

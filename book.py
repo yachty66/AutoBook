@@ -25,7 +25,8 @@ class Book():
         self.parse_chapters()
         self.parse_topics()
         self.parse_bullet_points()
-        self.init_book_generation()
+        self.init_book()
+        self.continue_book()
         #todo skip for now because consistency was always given
         #self.inconsistencies()
         #self.add_message()
@@ -62,7 +63,19 @@ class Book():
         self.messages.append({"role": "user", "content": "create detailed bullet points for each of the topics. don't abbreviate anything. provide the bullet points for each topics!"})
         bullet_points = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
         self.messages.append({"role": "assistant", "content": bullet_points})
-        self.outline += bullet_points
+        self.parse_chapters()
+        for i in range(3):
+        #print("outline number " + str(i) + ":" + outline)
+            if len(self.parsed_chapters) == 10:
+                self.outline += bullet_points
+                break
+            else:
+                #print("not enough chapter")
+                self.messages.append({"role": "user", "content": "continue to have bullet points for each topic of the ten chapters."})
+                bullet_points = openai.ChatCompletion.create(model="gpt-4-0613", messages=self.messages, temperature = 0.5).choices[0].message["content"]
+                self.outline += "\n" + bullet_points    
+                self.messages.append({"role": "assistant", "content": bullet_points})
+                self.parse_chapters()
         print("Bullet Points:")
         print(bullet_points)
         
@@ -114,7 +127,6 @@ class Book():
                 topic_match = topic_pattern.match(line)
                 if topic_match:
                     l.append(topic_match.group(1))
-                    print(l)
                     break
             if line == lines[-1] and l:
                 l_total.append(l)
@@ -162,7 +174,7 @@ class Book():
         print("parsed bullet points:")
         print(self.parsed_bullet_points)
         
-    def init_book_generation(self):
+    def init_book(self):
         messages = [
             {
                 "role": "system",
@@ -191,6 +203,9 @@ class Book():
         self.book += init_book
         with open('book_content.txt', 'w') as file:
             file.write(init_book)
+            
+    def continue_book(self):
+        pass
                     
     """def inconsistencies(self):
         self.messages.append({"role": "user", "content": f"are you seeing any inconsistencies with the outline of the following book?:\n\n{self.outline}"})
