@@ -160,6 +160,7 @@ Chapter 10: "The Aftermath: A New Era of Cognitive Enhancement"
    - His plans and aspirations for the future.
    - His hopes for the impact of his work on society and the field of neuroscience.
 """
+import re
 
 previous_content = ""
 
@@ -249,6 +250,38 @@ def continue_book():
                 
                 
 
+def process_book():
+    #here i do anything for making the cleanup of the book
+    #i need of cource always the chapter but only once
+    #can start with removing all chapter duplicates. i think it also would make it easier if i just going to remove all topics. so i can try to match chapter patterns and 
     
-init_book()
-continue_book()
+    with open('test.txt', 'r') as file:
+        lines = [line.strip() for line in file]
+    print(lines)
+    
+    #iter over lines and check if a line matches the pattern of a chapter 
+    #if so get the number of the chapter and store it in a variable. compare number with previous chapter number if its the same remove current line from lines
+    previous_chapter_number = None
+    cleaned_lines = []
+    for line in lines:
+        # Check if the line matches the pattern of a chapter
+        match = re.match(r'Chapter (\d+):', line)
+        if match:
+            current_chapter_number = int(match.group(1))
+            # If the chapter number is the same as the previous one, skip this line
+            if current_chapter_number == previous_chapter_number:
+                continue
+            else:
+                previous_chapter_number = current_chapter_number
+        cleaned_lines.append(line)
+
+    lines = cleaned_lines
+    with open('test2.txt', 'w') as file:
+        for line in cleaned_lines:
+            file.write(line + '\n')
+    
+    
+         
+process_book()
+#init_book()
+#continue_book()

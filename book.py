@@ -244,9 +244,6 @@ class Book():
                 self.book += '\n\n' + continue_book
                 with open('book_content.txt', 'a') as file:
                     file.write('\n\n' + continue_book)
-        
-        
-        pass
                     
     """def inconsistencies(self):
         self.messages.append({"role": "user", "content": f"are you seeing any inconsistencies with the outline of the following book?:\n\n{self.outline}"})
