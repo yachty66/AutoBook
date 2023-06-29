@@ -251,16 +251,9 @@ def continue_book():
                 
 
 def process_book():
-    #here i do anything for making the cleanup of the book
-    #i need of cource always the chapter but only once
-    #can start with removing all chapter duplicates. i think it also would make it easier if i just going to remove all topics. so i can try to match chapter patterns and 
-    
     with open('test.txt', 'r') as file:
         lines = [line.strip() for line in file]
     print(lines)
-    
-    #iter over lines and check if a line matches the pattern of a chapter 
-    #if so get the number of the chapter and store it in a variable. compare number with previous chapter number if its the same remove current line from lines
     previous_chapter_number = None
     cleaned_lines = []
     for line in lines:
@@ -273,9 +266,18 @@ def process_book():
                 continue
             else:
                 previous_chapter_number = current_chapter_number
+        # Check if the line matches the pattern of a topic and if so, skip this line
+        elif re.match(r'(Topic \d+:|- Topic \d+:|\*\D+\*|\d+\.\D+:|- \D+:)', line):
+            continue
         cleaned_lines.append(line)
-
     lines = cleaned_lines
+    
+    #next i want to match topics and if i can find them remove them. here is how topics can look like: 
+    #Topic 2: The initial challenges and breakthroughs in his research. OR *Dutch windmills, tulip fields, and canals* OR - The global impact of the cognitive enhancement algorithm: OR 1. Liam's background and move to Berlin. OR - Topic 1: Liam's INTJ personality and its influence on his life and career. OR 1. Liam's Early Life and Background:
+    
+    
+    
+    
     with open('test2.txt', 'w') as file:
         for line in cleaned_lines:
             file.write(line + '\n')
