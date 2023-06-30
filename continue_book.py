@@ -305,11 +305,8 @@ def process_book(continue_book, index):
         else:
             final_lines.append(cleaned_lines[i])
 
-    #Replace lines with cleaned lines
     lines = final_lines
-    
-    # Insert the chapter header at the beginning and ensure there are no two consecutive empty lines after it
-    #in the case the first item in lines is a empty line remove it
+
     if lines[0] == '':
         del lines[0]
     

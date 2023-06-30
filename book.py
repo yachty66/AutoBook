@@ -212,8 +212,7 @@ class Book():
         print(init_book)
         self.previous_content = init_book
         #todo change this name later
-        with open('book_content.txt', 'w') as file:
-            file.write(init_book)
+        self.process_book(init_book, 0)
             
     def continue_book(self):
         print("calling continue book method")
@@ -251,33 +250,71 @@ class Book():
                 messages.pop()
                 print("continue book:")
                 print(continue_book)
-                with open('book_content.txt', 'a') as file:
-                    file.write('\n\n' + continue_book)
+                self.process_book(continue_book, i)
                     
                     
-    def process_book(self):
+    def process_book(self, book, index):
         print("calling process book method")
-        with open('book_content.txt', 'r') as file:
+        chapter_patterns = [
+                re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
+                re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
+                re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+        ]
+        topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
+        topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
+        topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
+        topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  # New pattern
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]    
+        current_chapter = self.parsed_chapters[index]
+        #write init book to temp file 
+        with open('temp.txt', 'w') as file:
+            file.write(book)
+            
+        with open('temp.txt', 'r') as file:
             lines = [line.strip() for line in file]
-        previous_chapter_number = None
+
         cleaned_lines = []
         for line in lines:
-            match = re.match(r'Chapter (\d+):', line)
-            if match:
-                current_chapter_number = int(match.group(1))
-                if current_chapter_number == previous_chapter_number:
-                    continue
-                else:
-                    previous_chapter_number = current_chapter_number
-            elif re.match(r'(Topic \d+:|- Topic \d+:|\*\D+\*|\d+\.\D+:|- \D+:)', line):
+            # Check if the line matches the pattern of a chapter or topic
+            is_chapter_or_topic = False
+            for pattern in chapter_patterns:
+                if pattern.match(line):
+                    is_chapter_or_topic = True
+                    break
+            if not is_chapter_or_topic:
+                for pattern in topic_patterns:
+                    if pattern.match(line):
+                        is_chapter_or_topic = True
+                        break
+            # Check if the line matches the current chapter
+            if line == current_chapter:
+                is_chapter_or_topic = True
+            if not is_chapter_or_topic:
+                cleaned_lines.append(line)
+        # Remove consecutive empty lines
+        final_lines = []
+        for i in range(len(cleaned_lines)):
+            if i > 0 and cleaned_lines[i] == '' and cleaned_lines[i-1] == '':
                 continue
-            cleaned_lines.append(line)
-        lines = cleaned_lines
-        with open('new_book_content.txt', 'w') as file:
-            for i in range(len(cleaned_lines)):
-                if i > 0 and cleaned_lines[i] == '' and cleaned_lines[i-1] == '':
-                    continue
-                file.write(cleaned_lines[i] + '\n')
+            else:
+                final_lines.append(cleaned_lines[i])
+
+        lines = final_lines
+
+        if lines[0] == '':
+            del lines[0]
+        
+        if index != current_index:
+            lines.insert(0, f"## {current_chapter}")
+            if lines[1] == '' and lines[2] == '':
+                del lines[2]
+            current_index = index
+            
+        with open(f'{self.title}.txt', 'a') as file:
+            file.write('\n')
+            for line in lines:
+                file.write(line + '\n')
                     
 init = Book()
     
