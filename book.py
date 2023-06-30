@@ -24,12 +24,20 @@ class Book():
         self.chapters()
         self.topics()
         self.bullet_points()
+        self.metadata()
         self.parse_chapters()
         self.parse_topics()
         self.parse_bullet_points()
         self.init_book()
         self.continue_book()
-        self.process_book()
+        
+    def metadata(self):
+        with open(f'{self.str_title}_metadata.md', 'w') as metadata_file:
+            with open('prompt.md', 'r') as prompt_file:
+                content = prompt_file.read()
+            metadata_file.write(content)
+            metadata_file.write('\n' + '#' * 50 + '\n')
+            metadata_file.write(self.outline)
         
     def title(self):
         with open('prompt.md', 'r') as file:
