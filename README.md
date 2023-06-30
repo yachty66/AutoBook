@@ -52,10 +52,12 @@
     - find out why there is an error - 
     - generate an book cover for the intj book -
     - try to upload the book to amazon -
-    - create metadata file
-    - create book for elona musk 
-    - create beef bezos ... 
-    - create a book for all the mbti types which are left 
+    - create metadata file -
+    - create book for elona musk - 
+    - create beef bezos ...  -
+    - create a book for all the mbti types which are left -
+    - deal with **Topic 3: The Humorous and Heartwarming Conclusion to Elona's Journey** and **Chapter: The Sweet Smell of Success** and **Topic: The transformation in Elona's approach towards her business** and *Topic: The unexpected claim of copyrights on scents by aliens*
+    - fix errror that topics were not parsed correctly 
 
 
 

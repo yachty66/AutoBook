@@ -953,12 +953,20 @@ def parse_topics(outline):
                 re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
                 re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
             ]
-    topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
+    """topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
     topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
     topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
     topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  
     #topic_pattern5 = re.compile(r"^\*(.*?)\*$")  # New pattern to match '*Exploration of Liam's fascination with cognitive enhancement*'
-    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
+    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]"""
+    topic_patterns = [
+                re.compile(r'^\*\*(?!Chapter \d+: )(.*?)\*\*$'),
+                re.compile(r'^\d+\.\s*(.*?)\.?$'),
+                re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
+                re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
+                re.compile(r"^\s*-\s*(.*?):\s*$"),
+                re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
+    ]
 
     #problem is that chapter **Chapter 1: The Dutch Prodigy** gets accidentally parsed as a topic
     """chapter_patterns = [
@@ -994,5 +1002,5 @@ def parse_topics(outline):
     print(l_total)
 
 
-parse_topics(outline_six)
+parse_topics(outline_five)
                 

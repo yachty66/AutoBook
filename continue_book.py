@@ -267,11 +267,34 @@ def process_book(continue_book, index):
                 re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
                 re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
     ]
-    topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
+    #rewrite pattern matching for topics. it needs to detect the following patterns (but should not match with a chapter which are above defined):
+    """
+    **His Decision to Join the Races**
+    1. Liam's background and move to Berlin.
+    - Topic 1: Liam's INTJ personality and its influence on his life and career.
+    1. Liam's Early Life and Background:
+    - Liam's life in the Netherlands and his personality:
+    Topic 1: Liam's upbringing and early interest in technology and neuroscience.
+    **His Decision to Join the Races**
+    *The Importance of Balance: A Lesson Learned*
+    """
+    #this works but problem is probably that this shit also parses chapters 
+    topic_patterns = [
+                re.compile(r'^\*\*(?!Chapter \d+: )(.*?)\*\*$'),
+                re.compile(r'^\d+\.\s*(.*?)\.?$'),
+                re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
+                re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
+                re.compile(r"^\s*-\s*(.*?):\s*$"),
+                re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
+    ]
+    #topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4, topic_pattern5, topic_pattern6]
+    
+    
+    """topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
     topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
     topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
     topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  # New pattern
-    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]    
+    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]"""
     current_chapter = parsed_chapters[index]
     #write init book to temp file 
     with open('temp.txt', 'w') as file:
@@ -279,6 +302,8 @@ def process_book(continue_book, index):
         
     with open('temp.txt', 'r') as file:
         lines = [line.strip() for line in file]
+        
+    lines = ['**His Decision to Join the Races**', 'Following the evening of unanticipated revelations, Cole found himself back in the familiar surroundings of his garage. The tranquil silence of his workspace was a world away from the exhilarating chaos he had immersed himself into. He was caught in the echoes of the night past, and the resonance led to introspection; an analysis of his newfound curiosity.', "Cole was never one to rush into decisions — a trait he had developed as a mechanic. Caution, after all, was as essential a tool as any wrench or screwdriver. He ran the previous night's events through his mind in the same methodical way he would diagnose a malfunctioning engine. His hands, occupied with refurbishing a rebel vintage bike, seemed detached from his thoughts, committed to rote actions of their own.", "The underground racing community had revealed an entirely different aspect of his longtime companion — the motorcycle. Late-night rides gave him tranquility, but those high-speed races, he realized, offered a novel perspective. Freedom didn't just reside in tranquil solitude, but also in the shared rush of adrenaline, the wind harsher against your face, the heart pounding harder inside your chest. The pursuit of victory, the companionship of shared thrill, the assertion of skill and courage — all elements completely alien to his solitary rides.", "One couldn't ignore the risks and dangers posed by the illicit racing scene. Yet his ISTP personality, characterized by spontaneity, adaptability, and a knack for practical problem-solving, found an odd connection with the high-stakes environment. Here, decisions were made in the blink of an eye, adaptability could be the difference between victory and defeat, and identifying practical solutions during a high-speed race was not only desirable but vital. The races did not involve mechanical problems but were undoubtedly a splurge of high-speed enigmas named routes, rivals, and racing machines, all waiting to be solved.", 'Moreover, he realized, the races did not replace the soothing calm of solitary rides, but rather complemented it. Whispers of wisdom, his experiences in the solitude shared with the roaring engine, would help him confront the howling winds of the race. The solitary rider would not be lost, instead reborn, emerging as a racer amongst the roaring engines.', 'In quiet, introspective moments like these, Cole found clarity. He had been living in the company of machines, silently communicating with the language of pistons, spark plugs, and exhaust notes. However, the world he had stumbled upon expanded his perception beyond the language of machines. Humans and machines interfacing in a harmonious chaos, he realized, spoke a language as mesmerizing and complex, one he had only begun to interpret.', 'With the lenses of introspection revealing a new perspective, his decision was almost predefined. He saw an opportunity for growth, a chance to explore an uncharted path, to indulge in his love for speed and problem-solving, and possibly, to learn the nuances of an unfamiliar language — one of camaraderie, competition, and amplified thrill.', "As dusk painted the skies in hues of retreating day, a metaphorical green signal flickered to life in Cole's mind, propelling him past the usual routes of caution. The mechanic was ready to evolve into a clandestine rider. The decision was made. The solitary mechanic would indeed ride among the daredevils."]
 
     cleaned_lines = []
     for line in lines:
@@ -299,28 +324,18 @@ def process_book(continue_book, index):
         if not is_chapter_or_topic:
             cleaned_lines.append(line)
     # Remove consecutive empty lines
-    final_lines = []
-    for i in range(len(cleaned_lines)):
-        if i > 0 and cleaned_lines[i] == '' and cleaned_lines[i-1] == '':
-            continue
-        else:
-            final_lines.append(cleaned_lines[i])
-
-    lines = final_lines
-
-    if lines[0] == '':
-        del lines[0]
+    final_lines = [line for line in cleaned_lines if line != '']
+    
+    print(final_lines)
     
     if index != current_index:
-        lines.insert(0, f"## {current_chapter}")
-        if lines[1] == '' and lines[2] == '':
-            del lines[2]
-        current_index = index
+            lines.insert(0, f"## {current_chapter}")
+            current_index = index
         
     with open('book.txt', 'a') as file:
-        file.write('\n')
         for line in lines:
-            file.write(line + '\n')
+            # Write each line to file with an empty line in between
+            file.write(line + '\n\n')
 
 continue_book = """
 It was the potential intersection of neuroscience and AI that drew him in. Gradually, he gravitated towards studies pertaining to the human cognition—neuroplasticity and neural encoding. He was fascinated by the ways in which experiences rewire our brains and how our brains encode and decode information.
@@ -335,7 +350,8 @@ While his schoolmates reveled in Pacman and Space Invaders, Liam was often porin
 
 By the time he was fourteen, he had already taught himself rudimentary algorithm design and data structures. This was largely self-taught, fueled by late-night coding sessions and trial and error. His first programs were nothing more than text-based games and basic calculators. Still, the sense of accomplishment he felt each time he successfully ran a program was unmatched. It was during this time that he started developing an intuition for patterns and relationships between data, an intuition that would later become crucial.
 """            
-process_book(continue_book, 0)
+#process_book(continue_book, 0)
+process_book("random string", 0)
 
 #init_book()
 
