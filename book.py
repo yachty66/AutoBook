@@ -18,7 +18,8 @@ class Book():
         self.parsed_chapters = ""
         self.parsed_topics = ""
         self.parsed_bullet_points = ""
-        self.title = ""
+        self.str_title = ""
+        self.current_index = 9999
         self.title()
         self.chapters()
         self.topics()
@@ -30,20 +31,13 @@ class Book():
         self.continue_book()
         self.process_book()
         
-        
     def title(self):
-        #generate book title based on parameters
         with open('prompt.md', 'r') as file:
             content = file.read()
             start = content.find('**Title**: ') + len('**Title**: ')
             end = content.find('\n', start)
             title = content[start:end]
-        #self.folder(title)
-        self.title = title
-            
-    #def folder(title):
-    #    os.makedirs(title, exist_ok=True)
- 
+        self.str_title = title
         
     def chapters(self):
         print("calling chapters method")
@@ -292,29 +286,19 @@ class Book():
                 is_chapter_or_topic = True
             if not is_chapter_or_topic:
                 cleaned_lines.append(line)
-        # Remove consecutive empty lines
-        final_lines = []
-        for i in range(len(cleaned_lines)):
-            if i > 0 and cleaned_lines[i] == '' and cleaned_lines[i-1] == '':
-                continue
-            else:
-                final_lines.append(cleaned_lines[i])
+        # Remove every empty line
+        final_lines = [line for line in cleaned_lines if line != '']
 
         lines = final_lines
 
-        if lines[0] == '':
-            del lines[0]
-        
-        if index != current_index:
+        if index != self.current_index:
             lines.insert(0, f"## {current_chapter}")
-            if lines[1] == '' and lines[2] == '':
-                del lines[2]
-            current_index = index
+            self.current_index = index
             
-        with open(f'{self.title}.txt', 'a') as file:
-            file.write('\n')
+        with open(f'{self.str_title}.txt', 'a') as file:
             for line in lines:
-                file.write(line + '\n')
+                # Write each line to file with an empty line in between
+                file.write(line + '\n\n')
                     
 init = Book()
     
