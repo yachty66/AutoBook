@@ -265,6 +265,7 @@ def process_book(continue_book, index):
                 re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
                 re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
                 re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
     ]
     topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
     topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
@@ -320,8 +321,22 @@ def process_book(continue_book, index):
         file.write('\n')
         for line in lines:
             file.write(line + '\n')
-            
-#process_book(0)
 
-init_book()
-continue_book()
+continue_book = """
+It was the potential intersection of neuroscience and AI that drew him in. Gradually, he gravitated towards studies pertaining to the human cognition—neuroplasticity and neural encoding. He was fascinated by the ways in which experiences rewire our brains and how our brains encode and decode information.
+
+Liam’s childhood encounters with technology and his early passion for programming had laid the groundwork for his understanding of complex systems. Yet, it was his subsequent education in cognitive sciences that offered a new framework for viewing these systems, inciting an unquenchable thirst to revolutionize the potential of human brainpower. These experiences collectively charted his path towards a career that stood at the intersection of technology and neuroscience. Little did he know back then just how momentous his work would become.
+
+**Chapter 1: The Dutch Prodigy** (Continued)
+
+Computers, for Liam, were enchanting mystic boxes that held an infinite world of digital creations. His curiosity first led him to interact with them in a similar way to how most children do - through gaming. But, unlike most, his inclination was not just towards playing the games but understanding their inner workings. There was a definite fascination with the unknown and a decree that the unknown must be known.
+
+While his schoolmates reveled in Pacman and Space Invaders, Liam was often poring over his father’s considerable library of programming guides, deciphering the language of computers. The hours passed unnoticed as he scribbled algorithms in his notebook and put them into practice on the Command Line Interface. The joy of watching those lines of codes come into action, bringing forth new creations in the digital world was indescribable.
+
+By the time he was fourteen, he had already taught himself rudimentary algorithm design and data structures. This was largely self-taught, fueled by late-night coding sessions and trial and error. His first programs were nothing more than text-based games and basic calculators. Still, the sense of accomplishment he felt each time he successfully ran a program was unmatched. It was during this time that he started developing an intuition for patterns and relationships between data, an intuition that would later become crucial.
+"""            
+process_book(continue_book, 0)
+
+#init_book()
+
+#continue_book()

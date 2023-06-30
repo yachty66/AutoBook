@@ -84,6 +84,7 @@ class Book():
             re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
             re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
             re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
         ]
         chapters = []
         lines = self.outline.split("\n")
@@ -106,12 +107,14 @@ class Book():
                 re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
                 re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
                 re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
             ]
         topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
         topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
         topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
-        topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  # New pattern
-        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
+        topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  
+        topic_pattern5 = re.compile(r"^\*(.*?)\*$")  # New pattern to match '*Exploration of Liam's fascination with cognitive enhancement*'
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4, topic_pattern5]
         lines = self.outline.split("\n")
         lines = [line for line in lines if line.strip() != '']
         l = []
@@ -142,12 +145,14 @@ class Book():
             re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
             re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
             re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
         ]
         topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
         topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
         topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
-        topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  #
-        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
+        topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  
+        topic_pattern5 = re.compile(r"^\*(.*?)\*$")  # New pattern to match '*Exploration of Liam's fascination with cognitive enhancement*'
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4, topic_pattern5]
         is_inside_topic = False
         is_topic = False
         l_total = []
@@ -205,7 +210,6 @@ class Book():
         print("init book:")
         print(init_book)
         self.previous_content = init_book
-        #todo change this name later
         self.process_book(init_book, 0)
             
     def continue_book(self):
@@ -254,12 +258,14 @@ class Book():
                 re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
                 re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
                 re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
         ]
         topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
         topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
         topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
-        topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  # New pattern
-        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]    
+        topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  
+        topic_pattern5 = re.compile(r"^\*(.*?)\*$")  # New pattern to match '*Exploration of Liam's fascination with cognitive enhancement*'
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4, topic_pattern5]
         current_chapter = self.parsed_chapters[index]
         #write init book to temp file 
         with open('temp.txt', 'w') as file:

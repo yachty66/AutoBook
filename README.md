@@ -47,7 +47,7 @@
     - add new line if new chapter thing gets added -
     - create title of book method - 
     - create folder with name == title -  
-    - generate midjourney image and put it inside folder --> not so important actually, can i add later... -
+    - generate midjourney image and put it inside folder --> not so important actually, can i add later... - add support for matching the pattern of a topic like "*Exploration of Liam's fascination with cognitive enhancement*"
     - find out why there is no space after the chapter name... and correct
     - find out why there is an error
     - generate an book cover for the intj book 
