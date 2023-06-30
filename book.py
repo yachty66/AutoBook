@@ -118,15 +118,14 @@ class Book():
                 re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
             ]
         
-        
         topic_patterns = [
-            re.compile(r'^\*\*(?!.*Chapter).*\*\*$'),
-            re.compile(r'^\d+\.\s*(.*?)\.?$'),
-            re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
-            re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
-            re.compile(r"^\s*-\s*(.*?):\s*$"),
-            re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
-        ]   
+            re.compile(r'^\s*\*\*(?!.*Chapter).*\*\*$'),  # Added \s* at the beginning
+            re.compile(r'^\s*\d+\.\s*(.*?)\.?$'),  # Added \s* at the beginning
+            re.compile(r'^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$'),  # Added \s* at the beginning
+            re.compile(r'^\s*\d+\.\s*(.*?):\s*$'),  # Added \s* at the beginning
+            re.compile(r'^\s*-\s*(.*?):\s*$'),  # Added \s* at the beginning
+            re.compile(r'^\s*Topic\s*\d+:\s*(.*?)\.?$'),  # Added \s* at the beginning
+        ]
         lines = self.outline.split("\n")
         lines = [line for line in lines if line.strip() != '']
         l = []
@@ -161,12 +160,12 @@ class Book():
             re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
         ]
         topic_patterns = [
-            re.compile(r'^\*\*(?!.*Chapter).*\*\*$'),
-            re.compile(r'^\d+\.\s*(.*?)\.?$'),
-            re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
-            re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
-            re.compile(r"^\s*-\s*(.*?):\s*$"),
-            re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
+            re.compile(r'^\s*\*\*(?!.*Chapter).*\*\*$'),  # Added \s* at the beginning
+            re.compile(r'^\s*\d+\.\s*(.*?)\.?$'),  # Added \s* at the beginning
+            re.compile(r'^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$'),  # Added \s* at the beginning
+            re.compile(r'^\s*\d+\.\s*(.*?):\s*$'),  # Added \s* at the beginning
+            re.compile(r'^\s*-\s*(.*?):\s*$'),  # Added \s* at the beginning
+            re.compile(r'^\s*Topic\s*\d+:\s*(.*?)\.?$'),  # Added \s* at the beginning
         ]
         is_inside_topic = False
         is_topic = False
