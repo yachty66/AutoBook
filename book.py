@@ -117,14 +117,16 @@ class Book():
                 re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
                 re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
             ]
+        
+        
         topic_patterns = [
-                re.compile(r'^\*\*(?!Chapter \d+: )(.*?)\*\*$'),
-                re.compile(r'^\d+\.\s*(.*?)\.?$'),
-                re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
-                re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
-                re.compile(r"^\s*-\s*(.*?):\s*$"),
-                re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
-        ]
+            re.compile(r'^\*\*(?!.*Chapter).*\*\*$'),
+            re.compile(r'^\d+\.\s*(.*?)\.?$'),
+            re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
+            re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
+            re.compile(r"^\s*-\s*(.*?):\s*$"),
+            re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
+        ]   
         lines = self.outline.split("\n")
         lines = [line for line in lines if line.strip() != '']
         l = []
@@ -145,6 +147,7 @@ class Book():
             if line == lines[-1] and l:
                 l_total.append(l)
         self.parsed_topics = l_total
+        #parsed topics is parsing chapters for whatever reason
         print ("parsed topics:")
         print(self.parsed_topics)
         
@@ -158,12 +161,12 @@ class Book():
             re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
         ]
         topic_patterns = [
-                re.compile(r'^\*\*(?!Chapter \d+: )(.*?)\*\*$'),
-                re.compile(r'^\d+\.\s*(.*?)\.?$'),
-                re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
-                re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
-                re.compile(r"^\s*-\s*(.*?):\s*$"),
-                re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
+            re.compile(r'^\*\*(?!.*Chapter).*\*\*$'),
+            re.compile(r'^\d+\.\s*(.*?)\.?$'),
+            re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
+            re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
+            re.compile(r"^\s*-\s*(.*?):\s*$"),
+            re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
         ]
         is_inside_topic = False
         is_topic = False
@@ -273,12 +276,12 @@ class Book():
                 re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
         ]
         topic_patterns = [
-                re.compile(r'^\*\*(?!Chapter \d+: )(.*?)\*\*$'),
-                re.compile(r'^\d+\.\s*(.*?)\.?$'),
-                re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
-                re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
-                re.compile(r"^\s*-\s*(.*?):\s*$"),
-                re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
+            re.compile(r'^\*\*(?!.*Chapter).*\*\*$'),
+            re.compile(r'^\d+\.\s*(.*?)\.?$'),
+            re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
+            re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
+            re.compile(r"^\s*-\s*(.*?):\s*$"),
+            re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
         ]
         current_chapter = self.parsed_chapters[index]
         #write init book to temp file 
@@ -312,9 +315,7 @@ class Book():
         final_lines = [line for line in cleaned_lines if line != '']
         print("---------------final lines:---------------")
         print(final_lines)
-
         lines = final_lines
-
         if index != self.current_index:
             lines.insert(0, f"## {current_chapter}")
             self.current_index = index

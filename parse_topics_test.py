@@ -939,6 +939,167 @@ outline_six = """
    - The role of policy, regulation, and public education in managing these impacts.
 """
 
+outline_seven = """
+**Chapter 1: The Solitary Mechanic**
+1. Cole's daily routine in his garage:
+    - Cole's early morning routine of opening the garage and preparing for the day.
+    - The variety of motorcycles and engines he works on throughout the day.
+    - The satisfaction he feels when he successfully repairs or restores a motorcycle.
+
+2. A glimpse into Cole's ISTP personality:
+    - His preference for working alone and his independent nature.
+    - His practical problem-solving skills when faced with a mechanical issue.
+    - His spontaneity reflected in his late-night motorcycle rides.
+
+3. The joy and satisfaction Cole finds in working with engines and gears:
+    - The intricate details of engines that fascinate him.
+    - The thrill he gets from bringing a broken machine back to life.
+    - The peace and contentment in his solitary world.
+
+**Chapter 2: A Vintage Puzzle**
+1. The process of restoring a vintage motorcycle:
+    - The initial assessment of the motorcycle's condition.
+    - The careful disassembly and cleaning of parts.
+    - The meticulous restoration process, highlighting Cole's mechanical skills.
+
+2. The discovery of the hidden compartment, map, and key:
+    - The unexpected discovery while working on the motorcycle.
+    - The examination of the map and key, sparking Cole's curiosity.
+    - His decision to investigate the origin and purpose of these items.
+
+3. Cole's reaction and decision to investigate further:
+    - His initial surprise and intrigue about the discovery.
+    - His research and attempts to decipher the map.
+    - The decision to follow the map, setting the stage for his adventure.
+
+**Chapter 3: The Underground Circuit**
+1. Cole's first encounter with the underground racing community:
+    - His arrival at a hidden location revealed by the map.
+    - The vibrant, adrenaline-filled atmosphere of the underground races.
+    - His initial observations and impressions of the racing community.
+
+2. The thrill and risks of illegal racing:
+    - The excitement and danger associated with illegal racing.
+    - The high-speed races and the skill of the riders.
+    - The potential consequences of getting involved in this risky world.
+
+3. Cole's entry into the racing circuit:
+    - His decision to join the races and prove his riding skills.
+    - The modifications he makes to his motorcycle for racing.
+    - His first race, showcasing his talent and earning him recognition.
+
+**Chapter 4: The Enigmatic Rider**
+1. The modification of Cole's motorcycle for racing:
+    - The technical changes needed to enhance the motorcycle's speed and performance.
+    - The long hours spent in the garage, preparing the motorcycle.
+    - The final product: a high-speed racing machine.
+
+2. Cole's reputation building in the racing community:
+    - His success in the races, earning him a reputation.
+    - The respect and intrigue he garners from other riders.
+    - His growing influence in the underground circuit.
+
+3. The excitement and challenges of Cole's new double life:
+    - Balancing his daytime job as a mechanic with his nighttime racing activities.
+    - The thrill of leading a secret, adventurous life.
+    - The challenges and risks associated with his new lifestyle.
+
+**Chapter 5: An Unexpected Encounter**
+1. The introduction of Elena and her shared passion for motorcycles:
+    - Elena's unexpected entry into Cole's life.
+    - Their shared interest in motorcycles and adventure.
+    - Elena's vibrant personality and how it contrasts with Cole's reserved nature.
+
+2. The chemistry and connection between Cole and Elena:
+    - Their initial interactions and conversations.
+    - The growing attraction and connection between them.
+    - The impact of Elena's presence on Cole's solitary lifestyle.
+
+3. Elena's influence on Cole's solitary lifestyle:
+    - The changes in his routine and habits due to Elena's presence.
+    - The shared rides and adventures that bring them closer.
+    - Cole's gradual acceptance of Elena's place in his life.
+
+**Chapter 6: Decoding the Past**
+1. The process of decoding the map and key:
+    - Their collaborative effort to decipher the map and key.
+    - The clues they uncover and the mysteries they solve.
+    - The excitement and anticipation as they get closer to the treasure's location.
+
+2. The historical significance of the treasure:
+    - The discovery of the treasure's connection to the town's history.
+    - The stories and legends associated with the treasure.
+    - The realization of the importance of their discovery.
+
+3. The anticipation and excitement as Cole and Elena close in on the treasure's location:
+    - Their final journey to the treasure's location.
+    - The challenges they face along the way.
+    - The moment they find the treasure, marking the climax of their adventure.
+
+**Chapter 7: In Pursuit of Treasure**
+1. The journey to the treasure's location:
+    - Their preparation and planning for the journey.
+    - The obstacles they face during their travel.
+    - The teamwork and problem-solving skills they display to overcome these obstacles.
+
+2. The physical and mental challenges faced during the treasure hunt:
+    - The physical demands of the journey, testing their endurance.
+    - The mental challenges, requiring their ingenuity and problem-solving skills.
+    - The moments of tension and conflict during the treasure hunt.
+
+3. The discovery of the treasure:
+    - The final clues leading to the treasure.
+    - The moment of discovery, filled with joy and relief.
+    - The examination and appreciation of the treasure, signifying their successful adventure.
+
+**Chapter 8: The Rival Gang's Threat**
+1. The rival gang's discovery of the treasure:
+    - The unexpected encounter with the rival gang.
+    - The gang's demand for the treasure.
+    - The tension and danger posed by the gang's threat.
+
+2. The confrontation and threat from the gang:
+    - The standoff between Cole and the gang.
+    - The threats and intimidation from the gang.
+    - Cole's determination to protect the treasure and Elena.
+
+3. Cole and Elena's decision to protect the treasure and their town:
+    - Their discussion and planning to deal with the gang.
+    - Their resolve to protect their town and its history.
+    - The preparations for the impending chase and confrontation.
+
+**Chapter 9: The High-Speed Chase**
+1. The preparation for the impending chase:
+    - The modifications to their motorcycles for the chase.
+    - Their strategy and planning for the chase.
+    - The anticipation and tension before the chase begins.
+
+2. The high-speed chase and evasion from the gang:
+    - The start of the chase, filled with adrenaline and danger.
+    - The thrilling maneuvers and tactics used during the chase.
+    - The climax of the chase, testing Cole's riding skills and quick reflexes.
+
+3. Cole's strategic use of his mechanical skills and quick reflexes:
+    - The instances where Cole uses his mechanical knowledge during the chase.
+    - His quick reflexes that help them evade the gang.
+    - The successful evasion from the gang, marking their victory.
+
+**Chapter 10: The Mechanic's Legacy**
+1. The aftermath of the chase and confrontation with the gang:
+    - The relief and exhaustion after the chase.
+    - The consequences and repercussions of their adventure.
+    - The decision on what to do with the treasure.
+
+2. Cole's decision to use the treasure for the community:
+    - His plan to build a community center for mechanics and riders.
+    - The support and appreciation he receives from the town.
+    - The start of the construction of the community center, symbolizing his legacy.
+
+3. The establishment of the community center and the start of Cole's new chapter with Elena:
+    - The completion of the community center and its impact on the town.
+    - Cole's reflection on his journey and personal growth.
+    - The continuation of Cole's adventure with Elena, marking the start of a new chapter in his life.
+"""
 
 #1. The tough decisions about the future of the algorithm., - Topic 1: Liam's INTJ personality and its influence on his life and career., 1. Liam's Early Life and Background:, - his life in the Netherlands and his personality:
 
@@ -953,21 +1114,22 @@ def parse_topics(outline):
                 re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
                 re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
             ]
-    """topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
-    topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
-    topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
-    topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  
-    #topic_pattern5 = re.compile(r"^\*(.*?)\*$")  # New pattern to match '*Exploration of Liam's fascination with cognitive enhancement*'
-    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]"""
-    topic_patterns = [
+    """topic_patterns = [
                 re.compile(r'^\*\*(?!Chapter \d+: )(.*?)\*\*$'),
                 re.compile(r'^\d+\.\s*(.*?)\.?$'),
                 re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
                 re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
                 re.compile(r"^\s*-\s*(.*?):\s*$"),
                 re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
+    ]"""
+    topic_patterns = [
+        re.compile(r'^\*\*(?!.*Chapter).*\*\*$'),
+        re.compile(r'^\d+\.\s*(.*?)\.?$'),
+        re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
+        re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
+        re.compile(r"^\s*-\s*(.*?):\s*$"),
+        re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
     ]
-
     #problem is that chapter **Chapter 1: The Dutch Prodigy** gets accidentally parsed as a topic
     """chapter_patterns = [
             re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
@@ -1002,5 +1164,5 @@ def parse_topics(outline):
     print(l_total)
 
 
-parse_topics(outline_five)
+parse_topics(outline_seven)
                 
