@@ -281,7 +281,8 @@ class Book():
             re.compile(r"^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$"),
             re.compile(r"^\s*\d+\.\s*(.*?):\s*$"),
             re.compile(r"^\s*-\s*(.*?):\s*$"),
-            re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")
+            re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$"),
+            re.compile(r'^\*(?!.*Chapter)(.*?)\*$') 
         ]
         current_chapter = self.parsed_chapters[index]
         #write init book to temp file 
