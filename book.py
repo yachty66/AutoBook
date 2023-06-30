@@ -113,8 +113,7 @@ class Book():
         topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
         topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
         topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  
-        topic_pattern5 = re.compile(r"^\*(.*?)\*$")  # New pattern to match '*Exploration of Liam's fascination with cognitive enhancement*'
-        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4, topic_pattern5]
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
         lines = self.outline.split("\n")
         lines = [line for line in lines if line.strip() != '']
         l = []
@@ -151,8 +150,7 @@ class Book():
         topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
         topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
         topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  
-        topic_pattern5 = re.compile(r"^\*(.*?)\*$")  # New pattern to match '*Exploration of Liam's fascination with cognitive enhancement*'
-        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4, topic_pattern5]
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
         is_inside_topic = False
         is_topic = False
         l_total = []
@@ -264,8 +262,7 @@ class Book():
         topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
         topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
         topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  
-        topic_pattern5 = re.compile(r"^\*(.*?)\*$")  # New pattern to match '*Exploration of Liam's fascination with cognitive enhancement*'
-        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4, topic_pattern5]
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
         current_chapter = self.parsed_chapters[index]
         #write init book to temp file 
         with open('temp.txt', 'w') as file:

@@ -797,6 +797,148 @@ Chapter 10: "The Crossroads"
    - Looked forward to the future, ready to face whatever it might bring.
 """
 
+outline_six = """
+**Chapter 1: The Dutch Prodigy**
+1. Liam's early fascination with technology and cognitive sciences:
+   - His childhood encounters with technology and how they sparked his interest.
+   - His early experiments with programming and data analysis.
+   - His introduction to cognitive sciences and how it shaped his career path.
+2. The role of his family and education in shaping his passion:
+   - The influence of his parents and their occupations on his interests.
+   - His educational journey, highlighting key mentors and experiences.
+   - His achievements in school and university, particularly in AI and neuroscience.
+3. His early achievements and recognition in the field of AI and neuroscience:
+   - His first major project or research in the field.
+   - Recognition received for his work, such as awards or publications.
+   - The impact of these achievements on his confidence and ambition.
+
+**Chapter 2: The Berlin Shift**
+1. The reasons behind Liam's move to Berlin and his initial experiences:
+   - His motivation for moving, including professional opportunities and personal reasons.
+   - His initial impressions of the city and its tech scene.
+   - The challenges and opportunities he encounters upon arrival.
+2. The vibrant tech scene of Berlin and its influence on Liam:
+   - Description of Berlin's tech scene, including key companies, innovators, and trends.
+   - Liam's interactions with this community and the impact on his work.
+   - The opportunities provided by this environment for his research.
+3. Liam's decision to explore cognitive enhancement algorithms:
+   - The inspiration or trigger for this decision.
+   - His initial thoughts on the potential of cognitive enhancement.
+   - The steps he takes to start this new project.
+
+**Chapter 3: The Laboratory of the Mind**
+1. The transformation process of Liam's apartment into a functional lab:
+   - The planning and preparation involved in setting up the lab.
+   - The equipment and resources he gathers.
+   - The final setup of the lab and its functionality.
+2. The initial stages of his research and experimentation:
+   - His research plan and methodology.
+   - The early experiments he conducts and their results.
+   - The challenges he faces and how he overcomes them.
+3. The challenges and breakthroughs in his early research:
+   - The difficulties encountered in the research process.
+   - The moment of breakthrough and its significance.
+   - The impact of these breakthroughs on his work and ambition.
+
+**Chapter 4: The Modafinil Miracle**
+1. The process and success of synthesizing a Modafinil derivative:
+   - The scientific process involved in the synthesis.
+   - The moment of success and Liam's reaction to it.
+   - The potential implications of this success.
+2. Liam's personal use of the substance and its effects:
+   - His decision to use the substance himself and his reasons.
+   - The immediate and long-term effects he experiences.
+   - The impact of these effects on his lifestyle and work.
+3. The cognitive improvements and changes in Liam's life as a result:
+   - The improvements in his cognitive abilities, including memory, focus, and creativity.
+   - The changes in his work productivity and quality.
+   - The transformation in his personal life, including relationships and hobbies.
+
+**Chapter 5: The Algorithm of Ambition**
+1. The development process of the cognitive enhancement algorithm:
+   - The stages of development, including planning, coding, testing, and refinement.
+   - The challenges faced during development and how they are overcome.
+   - The completion of the algorithm and its initial performance.
+2. The first successful test and its implications:
+   - The preparation and execution of the first test.
+   - The success of the test and the data obtained.
+   - The implications of this success for Liam and his work.
+3. The sudden rise of Liam's fame in the tech world and its impact on his life:
+   - The spread of news about his work and the reaction of the tech community.
+   - The opportunities and challenges that come with fame.
+   - The changes in his personal and professional life due to his newfound fame.
+
+**Chapter 6: The Ethical Dilemma**
+1. The moral implications of cognitive enhancement substances:
+   - The potential benefits and risks of these substances.
+   - The ethical questions raised, including issues of access, fairness, and safety.
+   - The differing opinions among scientists, ethicists, and the public.
+2. The debate within Liam about the distribution of these substances:
+   - His initial thoughts on distribution and the factors influencing his decision.
+   - The arguments for and against distribution, and how he weighs them.
+   - His final decision and the reasoning behind it.
+3. The influence of public opinion and peer pressure on Liam's decision:
+   - The public's reaction to his work and their expectations.
+   - The pressure from peers and mentors in the tech community.
+   - The impact of these external pressures on his decision-making process.
+
+**Chapter 7: The Billionaire's Burden**
+1. The sudden wealth and lifestyle changes Liam experiences:
+   - The source of his wealth and his initial reaction to it.
+   - The changes in his lifestyle, including his living situation, daily routine, and social life.
+   - The emotional impact of these changes on him.
+2. The personal and professional challenges that come with his new status:
+   - The challenges in maintaining personal relationships and privacy.
+   - The professional challenges, including increased scrutiny and expectations.
+   - His strategies for coping with these challenges.
+3. Liam's struggle to maintain his focus on his work amidst distractions:
+   - The distractions he faces, including media attention, social engagements, and financial management.
+   - The impact of these distractions on his work and productivity.
+   - His efforts to maintain focus and balance in his life.
+
+**Chapter 8: The Corporate Espionage**
+1. The discovery of corporate espionage attempts against Liam:
+   - The initial signs of espionage and how they are discovered.
+   - The investigation into the espionage and the findings.
+   - The impact of this discovery on Liam and his work.
+2. The impact on Liam's work and his fight to protect it:
+   - The changes he makes to protect his work, including security measures and legal actions.
+   - The challenges faced in this fight and how they are overcome.
+   - The ongoing threat of espionage and its impact on his work and mental state.
+3. The measures taken to protect his work and reputation:
+   - The security measures implemented, including physical and digital security.
+   - The legal actions taken to protect his intellectual property.
+   - The public relations efforts to protect his reputation.
+
+**Chapter 9: The Regulatory Reckoning**
+1. The legal challenges faced by Liam and his work:
+   - The legal issues raised by his work, including intellectual property, safety, and ethical concerns.
+   - The legal actions taken against him and his responses.
+   - The outcome of these legal challenges and their impact on his work.
+2. The role of regulatory bodies in the tech world:
+   - The responsibilities and powers of regulatory bodies in overseeing tech innovations.
+   - The interactions between Liam and these bodies.
+   - The influence of these bodies on the direction and progress of his work.
+3. Liam's navigation through the complex world of tech law and ethics:
+   - His efforts to understand and comply with laws and regulations.
+   - The ethical dilemmas he faces and how he resolves them.
+   - The lessons he learns about the intersection of technology, law, and ethics.
+
+**Chapter 10: The Future of Cognitive Enhancement**
+1. Liam's vision for the future of cognitive enhancement:
+   - His predictions for the development of cognitive enhancement technology.
+   - His plans for his own research and development efforts.
+   - His hopes and fears for the societal impact of cognitive enhancement.
+2. The decisions Liam makes about his work and their implications:
+   - His decisions about the direction of his work, including new projects and collaborations.
+   - The potential implications of these decisions for his career and the field of cognitive enhancement.
+   - The personal factors influencing these decisions, including his values, ambitions, and experiences.
+3. The potential global impact of cognitive enhancement substances:
+   - The possible benefits of widespread cognitive enhancement, including improved productivity, creativity, and learning.
+   - The potential risks and challenges, including inequality, health risks, and societal disruption.
+   - The role of policy, regulation, and public education in managing these impacts.
+"""
+
 
 #1. The tough decisions about the future of the algorithm., - Topic 1: Liam's INTJ personality and its influence on his life and career., 1. Liam's Early Life and Background:, - his life in the Netherlands and his personality:
 
@@ -805,6 +947,21 @@ import re
 outlines = [outline_one, outline_two, outline_three, outline_four]
 def parse_topics(outline):
     chapter_patterns = [
+                re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
+                re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
+                re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
+            ]
+    topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
+    topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
+    topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
+    topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  
+    #topic_pattern5 = re.compile(r"^\*(.*?)\*$")  # New pattern to match '*Exploration of Liam's fascination with cognitive enhancement*'
+    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
+
+    #problem is that chapter **Chapter 1: The Dutch Prodigy** gets accidentally parsed as a topic
+    """chapter_patterns = [
             re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
             re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
             re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
@@ -814,7 +971,7 @@ def parse_topics(outline):
     topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
     topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
     topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  # New pattern
-    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
+    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]"""
     lines = outline.split("\n")
     lines = [line for line in lines if line.strip() != '']
     l = []
@@ -837,5 +994,5 @@ def parse_topics(outline):
     print(l_total)
 
 
-parse_topics(outline_one)
+parse_topics(outline_six)
                 
