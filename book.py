@@ -1,6 +1,7 @@
 import openai 
 from bs4 import BeautifulSoup
 import re
+import os 
 
 openai.api_key = "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"
 
@@ -13,10 +14,12 @@ class Book():
             }
         ]
         self.outline = ""
-        self.book = ""
+        self.previous_content = ""
         self.parsed_chapters = ""
         self.parsed_topics = ""
         self.parsed_bullet_points = ""
+        self.title = ""
+        self.title()
         self.chapters()
         self.topics()
         self.bullet_points()
@@ -26,6 +29,21 @@ class Book():
         self.init_book()
         self.continue_book()
         self.process_book()
+        
+        
+    def title(self):
+        #generate book title based on parameters
+        with open('prompt.md', 'r') as file:
+            content = file.read()
+            start = content.find('**Title**: ') + len('**Title**: ')
+            end = content.find('\n', start)
+            title = content[start:end]
+        #self.folder(title)
+        self.title = title
+            
+    #def folder(title):
+    #    os.makedirs(title, exist_ok=True)
+ 
         
     def chapters(self):
         print("calling chapters method")
@@ -88,7 +106,7 @@ class Book():
         print(self.parsed_chapters)
         
     def parse_topics(self):
-        print("calling parse topics method")^
+        print("calling parse topics method")
         chapter_patterns = [
                 re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
                 re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
@@ -98,7 +116,8 @@ class Book():
         topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
         topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
         topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
-        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3]
+        topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  # New pattern
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
         lines = self.outline.split("\n")
         lines = [line for line in lines if line.strip() != '']
         l = []
@@ -133,7 +152,8 @@ class Book():
         topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
         topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
         topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
-        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3]
+        topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  #
+        topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]
         is_inside_topic = False
         is_topic = False
         l_total = []
@@ -190,7 +210,7 @@ class Book():
         init_book = openai.ChatCompletion.create(model="gpt-4-0613", messages=messages, temperature = 1.0).choices[0].message["content"]
         print("init book:")
         print(init_book)
-        self.book += init_book
+        self.previous_content = init_book
         #todo change this name later
         with open('book_content.txt', 'w') as file:
             file.write(init_book)
@@ -223,20 +243,19 @@ class Book():
                 
                 the previous content of the book is:
                 
-                {previous_content}
+                {self.previous_content}
                 """
                 messages.append({"role": "user", "content": message})
                 continue_book = openai.ChatCompletion.create(model="gpt-4-0613", messages=messages, temperature = 1.0).choices[0].message["content"]
-                previous_content = continue_book
+                self.previous_content = continue_book
                 messages.pop()
                 print("continue book:")
                 print(continue_book)
-                self.book += '\n\n' + continue_book
                 with open('book_content.txt', 'a') as file:
                     file.write('\n\n' + continue_book)
                     
                     
-    def process_book():
+    def process_book(self):
         print("calling process book method")
         with open('book_content.txt', 'r') as file:
             lines = [line.strip() for line in file]

@@ -37,8 +37,18 @@
     - start with cleanup book function -
         - remove all duplicate chapters and write result back to file - 
         - remove all lines which introduce a topic and write result back to file - 
-    - clean code and add print statements everywhere to understand every step which is happening
-    - create my first book 
+    - clean code and add print statements everywhere to understand every step which is happening - 
+    - fix error of parsing topics -
+    - create my first book -
+    - read book to get impression of quality of book - 
+    - cleanup my files a bit - 
+    - add functionality that chapter gets added at the beginning of the lines only if the current chapter was not already added -
+    - check if my process function also works with continuation function -
+    - add new line if new chapter thing gets added -
+    - create title of book method - 
+    - create folder with name == title -  
+    - generate midjourney image and put it inside folder --> not so important actually, can i add later...
+
 
 
 

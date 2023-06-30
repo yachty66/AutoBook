@@ -19,6 +19,8 @@ parsed_topics = [["Liam's early life and family background in the Netherlands", 
 
 parsed_bullet_points = [['   - Born and raised in the Netherlands, in a family with a strong academic background.', '   - Parents are both professors, fostering an environment of intellectual curiosity.', "   - Early exposure to computers and science through his father's work."], ['   - Started coding at a young age, showing a natural talent for it.', '   - Developed an interest in neuroscience after reading a book on the human brain.', '   - Began to explore the intersection of computer science and neuroscience during his university years.'], ['   - Accepted a job offer from a tech startup in Berlin after graduation.', '   - The appeal of Berlin’s vibrant tech scene and the opportunity to further his research.', '   - Desire for a change of scenery and new challenges.'], ['   - Adjustment to the cultural differences between the Netherlands and Germany.', '   - Finding a suitable apartment and converting a room into a lab.', '   - Gathering necessary equipment and materials for his research.'], ['   - Initial failures and setbacks in his experiments.', '   - Breakthrough in synthesizing Modafinil and LSD derivatives.', '   - Emotional and mental response to his first successful experiment.'], ['   - Balancing work at the startup with his personal research.', '   - Building new relationships and networks in the tech industry.', '   - Personal life, hobbies, and how he spends his leisure time.'], ['   - Detailed process of synthesizing the cognitive enhancement substances.', '   - Challenges encountered during the synthesis process.', '   - The moment of success when the substances were finally synthesized.'], ['   - Initial disbelief and excitement at the successful synthesis.', '   - Decision to test the substances on himself, considering the risks and potential benefits.', '   - Preparing himself physically and mentally for the experiment.'], ['   - Internal debate about the ethics and potential dangers of self-experimentation.', '   - Taking the first dose and documenting the effects.', '   - The immediate and long-term effects of the substances on his cognition.'], ['   - Enhanced memory recall, increased focus, and improved problem-solving skills.', '   - Changes in his perception and understanding of complex concepts.', '   - The impact of these enhancements on his work and daily life.'], ['   - Rapid progress in his work and research due to enhanced abilities.', '   - Changes in his personal relationships and social interactions.', '   - The emotional and psychological impact of his enhanced cognition.'], ['   - Potential benefits of cognitive enhancement for various fields like medicine, education, and technology.', '   - Ethical considerations and potential misuse of such substances.', '   - The future of neuroscience with the introduction of cognitive enhancement.'], ['   - Recognition and accolades from the scientific community.', '   - Criticism and skepticism from some scientists and ethicists.', '   - Invitations to speak at conferences and contribute to scientific journals.'], ['   - Offers from corporations and individuals to buy his formula.', '   - Threats and coercion from people wanting to misuse his work.', '   - Measures taken to protect his work and himself.'], ['   - Coverage of his work in the media, both positive and negative.', '   - Public opinion divided between admiration, skepticism, and fear.', '   - Handling media interviews and public scrutiny.'], ['   - Debate about the fairness and ethical implications of cognitive enhancement.', '   - Potential for misuse and abuse of these substances.', '   - The responsibility of scientists in ensuring ethical use of their creations.'], ['   - Internal conflict about the right way to use and distribute the substances.', '   - The pressure of having created something with such potential for good and harm.', '   - Consultation with ethicists, lawyers, and fellow scientists about the best course of action.'], ['   - Scenarios of potential misuse, such as performance enhancement in sports or military applications.', '   - The danger of the substances falling into the wrong hands.', '   - Measures taken to prevent misuse and ensure ethical use.'], ['   - The economic value of his cognitive enhancement substances.', '   - Becoming a billionaire and the changes that brings to his life.', '   - The business aspects of his work, such as patents, licensing, and corporate partnerships.'], ['   - Dealing with financial advisors, lawyers, and the media.', '   - The impact of wealth on his personal relationships.', '   - The responsibility and pressure that comes with wealth.'], ['   - Changes in his relationships with friends, family, and colleagues.', '   - Dealing with jealousy, opportunism, and expectations from others.', '   - The challenge of maintaining authenticity and staying true to his values.'], ['   - Discovery of attempts to steal his work and sabotage his research.', '   - Dealing with corporate spies and infiltrators.', '   - The impact of this threat on his work and mental state.'], ['   - Legal battles to protect his patents and intellectual property.', '   - Dealing with lawsuits, regulatory challenges, and legal threats.', '   - The role of his legal team in navigating these challenges.'], ['   - Development of security measures to protect his work.', '   - Strategic decisions to counteract corporate espionage and legal threats.', '   - The mental and emotional toll of dealing with these threats.'], ['   - Decision about who should have access to the substances and under what conditions.', '   - Consideration of potential partnerships and collaborations.', '   - The dilemma of profit versus ethics and responsibility.'], ['   - Forecasting the potential impact of his decisions on society and the field of neuroscience.', '   - Weighing the potential benefits against the risks and ethical considerations.', '   - The pressure of making decisions that could change the world.'], ['   - The role of public opinion, legal considerations, and personal values in his decision-making.', '   - Dealing with pressure from corporations, government agencies, and the scientific community.', '   - Balancing his personal ambitions with his responsibility to society.'], ['   - Public and private reactions to his decisions.', '   - The impact of his decisions on his personal and professional life.', '   - Dealing with the consequences, both expected and unexpected.'], ['   - The potential for further research and development in cognitive enhancement.', '   - The regulatory and ethical landscape for cognitive enhancement substances.', "   - The role of Liam's work in shaping the future of neuroscience."], ['   - Reflections on his journey, his successes, and his mistakes.', '   - His plans and aspirations for the future.', '   - His hopes for the impact of his work on society and the field of neuroscience.']]
 
+current_index = 9999
+
 outline = """
 Chapter 1: "The Dutch Prodigy: A Childhood in the Netherlands"
 - Topic 1: Liam's early life and family background in the Netherlands.
@@ -197,9 +199,7 @@ def init_book():
     previous_content = init_book
     print("----------------init book:----------------")
     print(init_book)
-    book += init_book
-    with open('book_content2.txt', 'w') as file:
-        file.write(init_book)
+    process_book(init_book, 0)
         
 def continue_book():
     global previous_content
@@ -207,6 +207,7 @@ def continue_book():
     global parsed_topics
     global parsed_bullet_points
     global book
+    global current_index
     
     messages = [
         {
@@ -244,41 +245,86 @@ def continue_book():
             messages.pop()
             print("----------------continue book:----------------")
             print(continue_book)
-            book += '\n\n' + continue_book
-            with open('book_content2.txt', 'a') as file:
-                file.write('\n\n' + continue_book)
+            #book += '\n\n' + continue_book
+            #send continuee book to preprocess function
+            
+            #need to call preprocess function here
+            process_book(continue_book, i)
+            
+            #with open('book_content2.txt', 'a') as file:
+                #before writing line to file i need to remove the topic and the chapter from the line
+             #   file.write('\n\n' + continue_book)
                 
                 
-
-def process_book():
-    with open('test.txt', 'r') as file:
+def process_book(continue_book, index):
+    global current_index
+    print("parsed chapters:")
+    print(parsed_chapters)
+    chapter_patterns = [
+                re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
+                re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
+                re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
+    ]
+    topic_pattern1 = re.compile(r'^\s*\d+\.\s*(.*?)\.?$')
+    topic_pattern2 = re.compile(r"^\s*-?\s*\d*\.*\s*(.*:)\s*$")
+    topic_pattern3 = re.compile(r"^\s*-\s*Topic\s*\d+:\s*(.*?)\.?$")
+    topic_pattern4 = re.compile(r"^\s*Topic\s*\d+:\s*(.*?)\.?$")  # New pattern
+    topic_patterns = [topic_pattern1, topic_pattern2, topic_pattern3, topic_pattern4]    
+    current_chapter = parsed_chapters[index]
+    #write init book to temp file 
+    with open('temp.txt', 'w') as file:
+        file.write(continue_book)
+        
+    with open('temp.txt', 'r') as file:
         lines = [line.strip() for line in file]
-    previous_chapter_number = None
+
     cleaned_lines = []
     for line in lines:
-        # Check if the line matches the pattern of a chapter
-        match = re.match(r'Chapter (\d+):', line)
-        if match:
-            current_chapter_number = int(match.group(1))
-            # If the chapter number is the same as the previous one, skip this line
-            if current_chapter_number == previous_chapter_number:
-                continue
-            else:
-                previous_chapter_number = current_chapter_number
-        # Check if the line matches the pattern of a topic and if so, skip this line
-        elif re.match(r'(Topic \d+:|- Topic \d+:|\*\D+\*|\d+\.\D+:|- \D+:)', line):
+        # Check if the line matches the pattern of a chapter or topic
+        is_chapter_or_topic = False
+        for pattern in chapter_patterns:
+            if pattern.match(line):
+                is_chapter_or_topic = True
+                break
+        if not is_chapter_or_topic:
+            for pattern in topic_patterns:
+                if pattern.match(line):
+                    is_chapter_or_topic = True
+                    break
+        # Check if the line matches the current chapter
+        if line == current_chapter:
+            is_chapter_or_topic = True
+        if not is_chapter_or_topic:
+            cleaned_lines.append(line)
+    # Remove consecutive empty lines
+    final_lines = []
+    for i in range(len(cleaned_lines)):
+        if i > 0 and cleaned_lines[i] == '' and cleaned_lines[i-1] == '':
             continue
-        cleaned_lines.append(line)
-    lines = cleaned_lines
-    print(lines)
-    with open('test2.txt', 'w') as file:
-        for i in range(len(cleaned_lines)):
-            # Avoid writing two or more consecutive empty lines
-            if i > 0 and cleaned_lines[i] == '' and cleaned_lines[i-1] == '':
-                continue
-            file.write(cleaned_lines[i] + '\n')
+        else:
+            final_lines.append(cleaned_lines[i])
+
+    #Replace lines with cleaned lines
+    lines = final_lines
     
-         
-process_book()
-#init_book()
-#continue_book()
+    # Insert the chapter header at the beginning and ensure there are no two consecutive empty lines after it
+    #in the case the first item in lines is a empty line remove it
+    if lines[0] == '':
+        del lines[0]
+    
+    if index != current_index:
+        lines.insert(0, f"## {current_chapter}")
+        if lines[1] == '' and lines[2] == '':
+            del lines[2]
+        current_index = index
+        
+    with open('book.txt', 'a') as file:
+        file.write('\n')
+        for line in lines:
+            file.write(line + '\n')
+            
+#process_book(0)
+
+init_book()
+continue_book()
