@@ -1,9 +1,8 @@
 import openai 
-from bs4 import BeautifulSoup
 import re
-import os 
 
-openai.api_key = "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"
+#add your openai api key
+openai.api_key = "api_key"
 
 class Book():
     def __init__(self):
@@ -88,11 +87,11 @@ class Book():
     def parse_chapters(self):
         print("calling parse chapters method")
         chapter_patterns = [
-            re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
-            re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
-            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
-            re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
-            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
+            re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  
+            re.compile(r'^Chapter (\d+): "(.*?)"$'),  
+            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"), 
+            re.compile(r"^Chapter (\d+): (.*?)$"),  
+            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  
         ]
         chapters = []
         lines = self.outline.split("\n")
@@ -111,20 +110,20 @@ class Book():
     def parse_topics(self):
         print("calling parse topics method")
         chapter_patterns = [
-                re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
-                re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
-                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
-                re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
-                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
+                re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  
+                re.compile(r'^Chapter (\d+): "(.*?)"$'),  
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),
+                re.compile(r"^Chapter (\d+): (.*?)$"),  
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  
             ]
         
         topic_patterns = [
-            re.compile(r'^\s*\*\*(?!.*Chapter).*\*\*$'),  # Added \s* at the beginning
-            re.compile(r'^\s*\d+\.\s*(.*?)\.?$'),  # Added \s* at the beginning
-            re.compile(r'^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$'),  # Added \s* at the beginning
-            re.compile(r'^\s*\d+\.\s*(.*?):\s*$'),  # Added \s* at the beginning
-            re.compile(r'^\s*-\s*(.*?):\s*$'),  # Added \s* at the beginning
-            re.compile(r'^\s*Topic\s*\d+:\s*(.*?)\.?$'),  # Added \s* at the beginning
+            re.compile(r'^\s*\*\*(?!.*Chapter).*\*\*$'),  
+            re.compile(r'^\s*\d+\.\s*(.*?)\.?$'),  
+            re.compile(r'^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$'),  
+            re.compile(r'^\s*\d+\.\s*(.*?):\s*$'),  
+            re.compile(r'^\s*-\s*(.*?):\s*$'),  
+            re.compile(r'^\s*Topic\s*\d+:\s*(.*?)\.?$'),  
         ]
         lines = self.outline.split("\n")
         lines = [line for line in lines if line.strip() != '']
@@ -146,26 +145,25 @@ class Book():
             if line == lines[-1] and l:
                 l_total.append(l)
         self.parsed_topics = l_total
-        #parsed topics is parsing chapters for whatever reason
         print ("parsed topics:")
         print(self.parsed_topics)
         
     def parse_bullet_points(self):   
         print("calling parse bullet points method") 
         chapter_patterns = [
-            re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
-            re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
-            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
-            re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
-            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
+            re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'), 
+            re.compile(r'^Chapter (\d+): "(.*?)"$'),  
+            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  
+            re.compile(r"^Chapter (\d+): (.*?)$"),  
+            re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  
         ]
         topic_patterns = [
-            re.compile(r'^\s*\*\*(?!.*Chapter).*\*\*$'),  # Added \s* at the beginning
-            re.compile(r'^\s*\d+\.\s*(.*?)\.?$'),  # Added \s* at the beginning
-            re.compile(r'^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$'),  # Added \s* at the beginning
-            re.compile(r'^\s*\d+\.\s*(.*?):\s*$'),  # Added \s* at the beginning
-            re.compile(r'^\s*-\s*(.*?):\s*$'),  # Added \s* at the beginning
-            re.compile(r'^\s*Topic\s*\d+:\s*(.*?)\.?$'),  # Added \s* at the beginning
+            re.compile(r'^\s*\*\*(?!.*Chapter).*\*\*$'),  
+            re.compile(r'^\s*\d+\.\s*(.*?)\.?$'),  
+            re.compile(r'^\s*-?\s*Topic\s*\d+:\s*(.*?)\.?$'),  
+            re.compile(r'^\s*\d+\.\s*(.*?):\s*$'), 
+            re.compile(r'^\s*-\s*(.*?):\s*$'),  
+            re.compile(r'^\s*Topic\s*\d+:\s*(.*?)\.?$'),  
         ]
         is_inside_topic = False
         is_topic = False
@@ -221,8 +219,6 @@ class Book():
         """
         messages.append({"role": "user", "content": message})
         init_book = openai.ChatCompletion.create(model="gpt-4-0613", messages=messages, temperature = 1.0).choices[0].message["content"]
-        #print("init book:")
-        #print(init_book)
         self.previous_content = init_book
         self.process_book(init_book, 0)
             
@@ -260,19 +256,17 @@ class Book():
                 continue_book = openai.ChatCompletion.create(model="gpt-4-0613", messages=messages, temperature = 1.0).choices[0].message["content"]
                 self.previous_content = continue_book
                 messages.pop()
-                #print("continue book:")
-                #print(continue_book)
                 self.process_book(continue_book, i)
                     
                     
     def process_book(self, book, index):
         print("calling process book method")
         chapter_patterns = [
-                re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'),  # Format one
-                re.compile(r'^Chapter (\d+): "(.*?)"$'),  # Format two
-                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"),  # Format three
-                re.compile(r"^Chapter (\d+): (.*?)$"),  # Format four
-                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  # New pattern for continued chapters
+                re.compile(r'^\*\*Chapter (\d+): "(.*?)"\*\*$'), 
+                re.compile(r'^Chapter (\d+): "(.*?)"$'),  
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\*$"), 
+                re.compile(r"^Chapter (\d+): (.*?)$"),  
+                re.compile(r"^\*\*Chapter (\d+): (.*?)\*\* \(Continued\)$"),  
         ]
         topic_patterns = [
             re.compile(r'^\*\*(?!.*Chapter).*\*\*$'),
@@ -284,18 +278,14 @@ class Book():
             re.compile(r'^\*(?!.*Chapter)(.*?)\*$') 
         ]
         current_chapter = self.parsed_chapters[index]
-        #write init book to temp file 
         with open('temp.txt', 'w') as file:
             file.write(book)
             
         with open('temp.txt', 'r') as file:
             lines = [line.strip() for line in file]
 
-        print("---------------lines written from temp file:---------------")
-        print(lines)
         cleaned_lines = []
         for line in lines:
-            # Check if the line matches the pattern of a chapter or topic
             is_chapter_or_topic = False
             for pattern in chapter_patterns:
                 if pattern.match(line):
@@ -306,15 +296,11 @@ class Book():
                     if pattern.match(line):
                         is_chapter_or_topic = True
                         break
-            # Check if the line matches the current chapter
             if line == current_chapter:
                 is_chapter_or_topic = True
             if not is_chapter_or_topic:
                 cleaned_lines.append(line)
-        # Remove every empty line
         final_lines = [line for line in cleaned_lines if line != '']
-        print("---------------final lines:---------------")
-        print(final_lines)
         lines = final_lines
         if index != self.current_index:
             lines.insert(0, f"## {current_chapter}")
@@ -322,7 +308,6 @@ class Book():
             
         with open(f'{self.str_title}.txt', 'a') as file:
             for line in lines:
-                # Write each line to file with an empty line in between
                 file.write(line + '\n\n')
                     
 init = Book()
