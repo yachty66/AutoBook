@@ -1,7 +1,7 @@
 give me 10 chapters for a book about:
 
 """
-**Title**: Under the Hood: A Mechanic's Odyssey
+**Title**: Under the Hood: A Mechanic's Odyssey. A story of ISTP Cole Martinez.
 
 **Description/Theme**: Enter the world of Cole Martinez, an enigmatic ISTP motorcycle mechanic, who prefers the company of engines and gears over people. Through his exceptional skills in understanding and fixing machines, he embarks on a spontaneous adventure that takes him through a series of unexpected events, including underground racing, treasure hunting, and even an unexpected romance. Along the way, Cole’s practical problem-solving skills and adaptability are put to the test as he faces high-speed challenges and life-altering decisions.
 
