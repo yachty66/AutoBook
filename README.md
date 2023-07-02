@@ -2,6 +2,8 @@
 
 Automatically generate books with GPT-4
 
+![books](readme_image.png)
+
 ## Introduction
 
 AutoBook is an application that automatically creates books given a prompt describing the book. It generates chapters, topics for each chapter, and detailed bullet points for each topic. After creating this outline, the application generates text for every topic. Ultimately, this results in a book with approximately 15-20k words. The cost for creating one book is around $5. 
