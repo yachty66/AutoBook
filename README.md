@@ -1,13 +1,15 @@
 # AutoBook
 
+Automatically generate books with GPT-4
+
 ## Introduction
 
-This application is automatically creating books given a prompt for the description of the book. It generates chapters, topics for each chapter, and detailed bullet points for each topic. After creating this outline for every topic will be a text generated. this results in the end in a book with between 15-20k words. 
+AutoBook is an application that automatically creates books given a prompt describing the book. It generates chapters, topics for each chapter, and detailed bullet points for each topic. After creating this outline, the application generates text for every topic. Ultimately, this results in a book with approximately 15-20k words. The cost for creating one book is around $5. 
 
 ## Prerequisites
 - OpenAI Python library
 
-Make sure that you have a valid OpenAI API key as the application uses OpenAI's GPT-4 model for generating the book content.
+Ensure you have a valid OpenAI API key, as the application uses OpenAI's GPT-4 model to generate the book content.
 
 ## Installation
 1. Clone the repository:
@@ -20,23 +22,23 @@ Make sure that you have a valid OpenAI API key as the application uses OpenAI's 
    ```
 
 ## Configuration
-1. Inside the script, set the OpenAI API key by replacing `"api_key"` with your OpenAI API key:
+1. Within the script, set the OpenAI API key by replacing `"api_key"` with your OpenAI API key:
    ```python
    openai.api_key = "YOUR_OPENAI_API_KEY"
    ```
-2. Make sure you have a file named `prompt.md` in the same directory as the script. This file should contain the initial content or prompts that will be used to guide the AI in generating the book content.
+2. Ensure you have a file named `prompt.md` in the same directory as the script. This file should contain the initial content or prompts that will be used to guide the AI in generating the book content.
 
 ## Usage
 1. Run the script:
    ```sh
    python book.py
    ```
-2. The script will create chapters, topics, and detailed bullet points for each topic automatically.
-3. The application generates a metadata file (`title_metadata.md`) and a content file (`title.txt`) where "title" is the title of the book defined in `prompt.md`. Both files will be saved in the same directory as the script.
+2. The script will automatically create chapters, topics, and detailed bullet points for each topic.
+3. The application generates two files: a metadata file (`title_metadata.md`) and a content file (`title.txt`), where "title" is the title of the book defined in `prompt.md`. Both files will be saved in the same directory as the script.
 
 ## File Descriptions
 - `book.py`: The main Python script file that contains all the code.
-- `prompt.md`: A markdown file with the initial prompts for the book, adjust the file to your needs depending which kind of book you want to generate. This file must be in the same directory as the script.
+- `prompt.md`: A markdown file with the initial prompts for the book. Adjust this file according to your needs depending on the kind of book you want to generate. This file must be in the same directory as the script.
 - `title_metadata.md`: A markdown file that contains metadata and an outline of the book.
 - `title.txt`: A text file that contains the generated content of the book.
 
