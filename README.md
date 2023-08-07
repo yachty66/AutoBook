@@ -18,7 +18,7 @@ Ensure you have a valid OpenAI API key, as the application uses OpenAI's GPT-4 m
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your_username_/Your-Repo-Name.git
+   https://github.com/yachty66/AutoBook.git
    ```
 2. Install the required Python packages:
    ```sh
